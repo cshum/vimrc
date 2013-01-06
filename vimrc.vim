@@ -81,7 +81,6 @@ if has('gui_running')
 	set guioptions-=LlRrb "remove scrollbars
 endif
 if has('gui_macvim')
-	set fullscreen
 	set guifont=Monaco:h13
 endif
 if has("gui_win32") || has("gui_win64")
