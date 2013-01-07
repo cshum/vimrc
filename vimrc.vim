@@ -38,6 +38,7 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'scrooloose/syntastic'
 Bundle 'OmniCppComplete'
 Bundle 'python.vim'
+Bundle 'gotcha/vimpdb'
 Bundle 'pythoncomplete'
 Bundle 'mattn/zencoding-vim'
 Bundle 'hail2u/vim-css3-syntax'
@@ -111,6 +112,10 @@ let g:NERDTreeWinSize = 20
 " }
 " { TagBar stuff
 command -range TB TagbarToggle
+let g:tagbar_width = 30
+" }
+" { TaskList stuff
+command -range TL TaskList
 " }
 " { Fuzzy Finder stuffs
 nmap ,c :FufCoverageFile<CR>
