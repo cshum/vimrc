@@ -26,10 +26,13 @@ Bundle 'FuzzyFinder'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'TaskList.vim'
 Bundle 'Lokaltog/vim-powerline'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "honza/snipmate-snippets"
+Bundle 'garbas/vim-snipmate'
+Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
-Bundle 'henrik/vim-indexed-search'
-Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'edsono/vim-matchit'
@@ -95,17 +98,6 @@ if has('gui_gtk2')
 endif
 " }
 
-" { autocomplete
-set ofu=syntaxcomplete#Complete
-au FileType python set omnifunc=pythoncomplete#Complete
-au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-au FileType html set omnifunc=htmlcomplete#CompleteTags
-au FileType css set omnifunc=csscomplete#CompleteCSS
-au FileType xml set omnifunc=xmlcomplete#CompleteTags
-au FileType php set omnifunc=phpcomplete#CompletePHP
-au FileType c set omnifunc=ccomplete#Complete
-" }
-
 " { NERD Tree stuffs
 command -range NT NERDTreeToggle
 let g:NERDTreeWinSize = 20
@@ -137,4 +129,18 @@ let g:syntastic_check_on_open=1
 " }
 " { Zencoding
 let g:user_zen_expandabbr_key='<C-z>'
+" }
+" { Neocomplete
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_min_syntax_length = 3
+" }
+" { OmniComplete
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" }
+" { Supertab
+let g:SuperTabDefaultCompletionType = "context"
 " }
