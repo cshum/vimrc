@@ -1,20 +1,9 @@
 set nocompatible
 set laststatus=2   "Always show statusline
 set encoding=utf-8 
+set t_Co=256
 
-" { Find Project Directory
-function ProjectDir()
-	if expand("%:p:h") =~ '[\\/]Workspace[\\/]'
-		let workdir = matchstr(expand("%:p"),".*[\\/]Workspace[\\/][a-zA-Z_0-9\.\ ]*[\\/]")
-		silent! cd `=workdir` "goto dir under Workspace (*nix)
-	else
-		silent! cd %:p:h "goto current dir
-	endif
-endfunction
-au BufEnter * :call ProjectDir() 
-" }
-
-" { Vundle
+"Vundle
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -23,14 +12,11 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'samsonw/vim-task'
+Bundle 'mileszs/ack.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'TaskList.vim'
 Bundle 'Lokaltog/vim-powerline'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "honza/snipmate-snippets"
-Bundle 'garbas/vim-snipmate'
-Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
@@ -39,16 +25,22 @@ Bundle 'edsono/vim-matchit'
 Bundle 'docunext/closetag.vim'
 Bundle 'Townk/vim-autoclose'
 Bundle 'scrooloose/syntastic'
-Bundle 'OmniCppComplete'
+Bundle 'ervandew/supertab'
+Bundle 'StanAngeloff/php.vim'
+Bundle 'shawncplus/phpcomplete.vim'
+Bundle 'davidhalter/jedi-vim'
 Bundle 'python.vim'
 Bundle 'gotcha/vimpdb'
-Bundle 'pythoncomplete'
 Bundle 'mattn/zencoding-vim'
+Bundle 'othree/html5.vim'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'groenewege/vim-less'
 Bundle 'pangloss/vim-javascript'
-Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'tpope/vim-markdown'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "honza/snipmate-snippets"
+Bundle "garbas/vim-snipmate"
 
 if has('gui_macvim')
 	Bundle 'suan/vim-instant-markdown' 
@@ -61,7 +53,6 @@ if has('gui_running')
 endif
 
 Bundle 'godlygeek/csapprox'
-" }
 
 syntax on
 filetype plugin indent on
@@ -80,7 +71,7 @@ colorscheme vividchalk
 
 set grepprg=grep\ -nH\ $*
 
-" { gVim stuff
+"GUI Condition
 if has('gui_running')
 	set guioptions-=T  "remove toolbar
 	set guioptions-=m  "remove menubar
@@ -88,6 +79,7 @@ if has('gui_running')
 	set guioptions-=LlRrb "remove scrollbars
 endif
 if has('gui_macvim')
+	set sh=/bin/sh 
 	set guifont=Monaco:h13
 endif
 if has("gui_win32") || has("gui_win64")
@@ -96,51 +88,66 @@ if has("gui_win32") || has("gui_win64")
 endif
 if has('gui_gtk2')
 endif
-" }
 
-" { NERD Tree stuffs
-command -range NT NERDTreeToggle
-let g:NERDTreeWinSize = 20
-" }
-" { TagBar stuff
-command -range TB TagbarToggle
-let g:tagbar_width = 30
-" }
-" { TaskList stuff
-command -range TL TaskList
-" }
-" { Fuzzy Finder stuffs
-nmap ,c :FufCoverageFile<CR>
-nmap ,f :FufFileWithCurrentBufferDir<CR>
-nmap ,b :FufBuffer<CR>
-nmap ,r :FufRenewCache<CR>
-let g:fuf_file_exclude= '\v\.DS_Store|\.directory|\.git\/|\.swp|\.svn|\.jpg|\.png'
-let g:fuf_coveragefile_exclude= '\v\.DS_Store|\.directory|\.git\/|\.swp|\.svn|\.jpg|\.png'
-let g:fuf_enumeratingLimit = 20
-" }
+"Find Project Directory
+	function ProjectDir()
+		if expand("%:p:h") =~ '[\\/]Workspace[\\/]'
+			let workdir = matchstr(expand("%:p"),".*[\\/]Workspace[\\/][a-zA-Z_0-9\.\ ]*[\\/]")
+			silent! cd `=workdir` "goto dir under Workspace (*nix)
+		else
+			silent! cd %:p:h "goto current dir
+		endif
+	endfunction
+	au BufEnter * :call ProjectDir() 
 
-" { HTML indentation
-let g:html_indent_inctags = "html,body,head,tbody"
-let g:html_indent_script1 = "inc"
-let g:html_indent_style1 = "inc"
-" }
-" { syntastic
-let g:syntastic_check_on_open=1
-" }
-" { Zencoding
-let g:user_zen_expandabbr_key='<C-z>'
-" }
-" { Neocomplete
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_min_syntax_length = 3
-" }
-" { OmniComplete
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-" }
-" { Supertab
-let g:SuperTabDefaultCompletionType = "context"
-" }
+"NERD Tree stuffs
+	command -range NT NERDTreeToggle
+	let g:NERDTreeWinSize = 20
+"TagBar stuff
+	command -range TB TagbarToggle
+	let g:tagbar_width = 30
+"TaskList stuff
+	command -range TL TaskList
+"Fuzzy Finder stuffs
+	nmap ,c :FufCoverageFile<CR>
+	nmap ,f :FufFileWithCurrentBufferDir<CR>
+	nmap ,b :FufBuffer<CR>
+	nmap ,r :FufRenewCache<CR>
+	let g:fuf_file_exclude= '\v\.DS_Store|\.directory|\.git\/|\.swp|\.svn|\.jpg|\.png'
+	let g:fuf_coveragefile_exclude= '\v\.DS_Store|\.directory|\.git\/|\.swp|\.svn|\.jpg|\.png'
+	let g:fuf_enumeratingLimit = 20
+
+"HTML indentation
+	let g:html_indent_inctags = "html,body,head,tbody"
+	let g:html_indent_script1 = "inc"
+	let g:html_indent_style1 = "inc"
+"syntastic
+	let g:syntastic_check_on_open=1
+"Zencoding
+	let g:user_zen_expandabbr_key='<C-z>'
+
+"AutoComplete
+	set ofu=syntaxcomplete#Complete
+	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+	autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+	autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+"Supertab
+	let g:SuperTabDefaultCompletionType = "context"
+
+"Vim Task"
+	function TaskConfig()
+		setfiletype task
+		nmap t :call Toggle_task_status()<CR>
+		set nonumber
+		set nowrap
+	endfunction
+	autocmd BufNewFile,BufRead todo.txt,*.task,*.tasks :call TaskConfig()
+
+"Easy Motion"
+	let g:EasyMotion_leader_key = '<Leader>'
+
+
