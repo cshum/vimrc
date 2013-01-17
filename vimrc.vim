@@ -28,8 +28,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'ervandew/supertab'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'shawncplus/phpcomplete.vim'
-Bundle 'davidhalter/jedi-vim'
 Bundle 'python.vim'
+Bundle 'pythoncomplete'
 Bundle 'gotcha/vimpdb'
 Bundle 'mattn/zencoding-vim'
 Bundle 'othree/html5.vim'
@@ -62,6 +62,7 @@ set ai
 set smartindent
 set tabstop=4
 set shiftwidth=4
+set nofoldenable
 set autoread " auto reload files
 set incsearch " highlight when typing search
 set hlsearch " highlight search
