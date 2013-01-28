@@ -15,7 +15,6 @@ Bundle 'FuzzyFinder'
 Bundle 'samsonw/vim-task'
 Bundle 'mileszs/ack.vim'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'TaskList.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
@@ -23,7 +22,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'edsono/vim-matchit'
 Bundle 'docunext/closetag.vim'
-Bundle 'Townk/vim-autoclose'
 Bundle 'scrooloose/syntastic'
 Bundle 'ervandew/supertab'
 Bundle 'StanAngeloff/php.vim'
@@ -43,6 +41,7 @@ Bundle "honza/snipmate-snippets"
 Bundle "garbas/vim-snipmate"
 
 if has('gui_macvim')
+	Bundle 'TaskList.vim'
 	Bundle 'suan/vim-instant-markdown' 
 endif
 if has("gui_win32") || has("gui_win64")
@@ -146,7 +145,9 @@ endif
 		set nonumber
 		set nowrap
 	endfunction
-	autocmd BufNewFile,BufRead todo.txt,*.task,*.tasks :call TaskConfig()
+	if has('gui_macvim')
+		autocmd BufNewFile,BufRead todo.txt,*.task,*.tasks :call TaskConfig()
+	endif
 
 "Easy Motion"
 	let g:EasyMotion_leader_key = '<Leader>'
