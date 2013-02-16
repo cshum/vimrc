@@ -39,10 +39,10 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "honza/snipmate-snippets"
 Bundle "garbas/vim-snipmate"
+Bundle "Tumblr"
 
 if has('gui_macvim')
 	Bundle 'TaskList.vim'
-	Bundle 'suan/vim-instant-markdown' 
 endif
 if has("gui_win32") || has("gui_win64")
 	Bundle 'xolox/vim-shell'
@@ -153,3 +153,6 @@ endif
 	let g:EasyMotion_leader_key = '<Leader>'
 
 
+"Tumblr"
+	let tumblr_email="me@cshum.com"
+	let tumblr_password="CutLeiTiu4"
