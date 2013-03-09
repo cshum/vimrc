@@ -11,7 +11,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle' 
 Bundle 'tpope/vim-vividchalk'
 Bundle 'L9'
-Bundle 'FuzzyFinder'
+Bundle 'kien/ctrlp.vim'
 Bundle 'samsonw/vim-task'
 Bundle 'mileszs/ack.vim'
 Bundle 'Lokaltog/vim-easymotion'
@@ -39,7 +39,6 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "honza/snipmate-snippets"
 Bundle "garbas/vim-snipmate"
-Bundle "Tumblr"
 
 if has('gui_macvim')
 	Bundle 'TaskList.vim'
@@ -68,6 +67,8 @@ set hlsearch " highlight search
 set nohidden "clear buffer when close
 au BufNewFile,BufRead *.tex,*.md,*.markdown setlocal spell "spellcheck
 colorscheme vividchalk
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
 
 set grepprg=grep\ -nH\ $*
 
@@ -108,24 +109,6 @@ endif
 	let g:tagbar_width = 30
 "TaskList stuff
 	command -range TL TaskList
-"Fuzzy Finder stuffs
-	nmap ,c :FufCoverageFile<CR>
-	nmap ,f :FufFileWithCurrentBufferDir<CR>
-	nmap ,b :FufBuffer<CR>
-	nmap ,r :FufRenewCache<CR>
-	let g:fuf_file_exclude= '\v\.DS_Store|\.directory|\.git\/|\.swp|\.svn|\.jpg|\.png'
-	let g:fuf_coveragefile_exclude= '\v\.DS_Store|\.directory|\.git\/|\.swp|\.svn|\.jpg|\.png'
-	let g:fuf_enumeratingLimit = 20
-
-"HTML indentation
-	let g:html_indent_inctags = "html,body,head,tbody"
-	let g:html_indent_script1 = "inc"
-	let g:html_indent_style1 = "inc"
-"syntastic
-	let g:syntastic_check_on_open=1
-"Zencoding
-	let g:user_zen_expandabbr_key='<C-z>'
-
 "AutoComplete
 	set ofu=syntaxcomplete#Complete
 	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -149,10 +132,13 @@ endif
 		autocmd BufNewFile,BufRead todo.txt,*.task,*.tasks :call TaskConfig()
 	endif
 
+"CtrlP
+	let g:ctrlp_custom_ignore = {
+	  \ 'dir':  '\v[\/](\.git|node_modules|build|modules|system|thumbnails)$',
+	  \ 'file': '\v\.(exe|so|dll|jpg|png|db)$',
+	  \ 'link': 'some_bad_symbolic_links',
+	  \ }
+
 "Easy Motion"
 	let g:EasyMotion_leader_key = '<Leader>'
 
-
-"Tumblr"
-	let tumblr_email="me@cshum.com"
-	let tumblr_password="CutLeiTiu4"
