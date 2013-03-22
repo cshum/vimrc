@@ -29,12 +29,13 @@ Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'python.vim'
 Bundle 'pythoncomplete'
 Bundle 'gotcha/vimpdb'
-Bundle 'mattn/zencoding-vim'
 Bundle 'othree/html5.vim'
+Bundle 'digitaltoad/vim-jade'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'groenewege/vim-less'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-markdown'
+Bundle 'tangledhelix/vim-octopress'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "honza/snipmate-snippets"
@@ -58,8 +59,9 @@ filetype plugin indent on
 set number " show line numbers
 set ai
 set smartindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
+set expandtab
 set nofoldenable
 set autoread " auto reload files
 set incsearch " highlight when typing search
@@ -89,17 +91,6 @@ if has("gui_win32") || has("gui_win64")
 endif
 if has('gui_gtk2')
 endif
-
-"Find Project Directory
-	function ProjectDir()
-		if expand("%:p:h") =~ '[\\/]Workspace[\\/]'
-			let workdir = matchstr(expand("%:p"),".*[\\/]Workspace[\\/][a-zA-Z_0-9\.\ ]*[\\/]")
-			silent! cd `=workdir` "goto dir under Workspace (*nix)
-		else
-			silent! cd %:p:h "goto current dir
-		endif
-	endfunction
-	au BufEnter * :call ProjectDir() 
 
 "NERD Tree stuffs
 	command -range NT NERDTreeToggle
@@ -134,11 +125,14 @@ endif
 
 "CtrlP
 	let g:ctrlp_custom_ignore = {
-	  \ 'dir':  '\v[\/](\.git|node_modules|build|modules|system|thumbnails)$',
-	  \ 'file': '\v\.(exe|so|dll|jpg|png|db)$',
+	  \ 'dir':  '\v[\/](\.git|node_modules|build|modules|system)$',
+	  \ 'file': '\v\.(exe|so|dll|jpg|png|gif|ai|db)$',
 	  \ 'link': 'some_bad_symbolic_links',
 	  \ }
 
 "Easy Motion"
 	let g:EasyMotion_leader_key = '<Leader>'
 
+"Zen Coding
+  let g:user_zen_expandabbr_key = '<c-e>' 
+  let g:use_zen_complete_tag = 1
