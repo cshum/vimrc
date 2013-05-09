@@ -61,7 +61,6 @@ set ai
 set smartindent
 set tabstop=2
 set shiftwidth=2
-set expandtab
 set nofoldenable
 set autoread " auto reload files
 set incsearch " highlight when typing search
@@ -73,6 +72,16 @@ colorscheme vividchalk
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
 
 set grepprg=grep\ -nH\ $*
+
+" { Find Project Directory
+function ProjectDir()
+	if expand("%:p:h") =~ '[\\/]Workspace[\\/]'
+		let workdir = matchstr(expand("%:p"),".*[\\/]Workspace[\\/][a-zA-Z_0-9\.\ ]*[\\/]")
+		silent! cd `=workdir` "goto dir under Workspace (*nix)
+	endif
+endfunction
+au BufEnter * :call ProjectDir() 
+" }
 
 "GUI Condition
 if has('gui_running')
