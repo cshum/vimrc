@@ -96,7 +96,7 @@ endif
 
 "NERD Tree stuffs
 	command -range NT NERDTree
-	let g:NERDTreeWinSize = 20
+	let g:NERDTreeWinSize = 25
   let NERDTreeChDirMode=2
 "TagBar stuff
 	command -range TB TagbarToggle
