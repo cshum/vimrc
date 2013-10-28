@@ -95,7 +95,7 @@ endif
   let g:airline_right_sep=''
 
 "NERD Tree stuffs
-	command -range NT NERDTree
+	command -range NT NERDTreeFind
 	let g:NERDTreeWinSize = 25
   let NERDTreeChDirMode=2
 "TagBar stuff
