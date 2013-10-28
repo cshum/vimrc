@@ -18,6 +18,8 @@ Bundle 'samsonw/vim-task'
 Bundle 'mileszs/ack.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'bling/vim-airline'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
@@ -95,7 +97,8 @@ endif
   let g:airline_right_sep=''
 
 "NERD Tree stuffs
-	command -range NT NERDTreeFind
+	command -range NT NERDTree
+	command -range NF NERDTreeFind
 	let g:NERDTreeWinSize = 25
   let NERDTreeChDirMode=2
 "TagBar stuff
