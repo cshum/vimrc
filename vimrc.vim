@@ -20,6 +20,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'bling/vim-airline'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
+Bundle 'captbaritone/better-indent-support-for-php-with-html'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
@@ -100,7 +101,7 @@ endif
 	command -range NT NERDTree
 	command -range NF NERDTreeFind
 	let g:NERDTreeWinSize = 25
-  let NERDTreeChDirMode=2
+  let NERDTreeChDirMode = 2
 "TagBar stuff
 	command -range TB TagbarToggle
 	let g:tagbar_width = 30
