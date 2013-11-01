@@ -153,7 +153,7 @@ syntax on
 	let g:EasyMotion_leader_key = '<Leader>'
 
 "Rooter
-  let g:rooter_patterns = ['.git', '.git/', '.svn/','modules/','Rakefile', 'composer.json', 'package.json']
+  let g:rooter_patterns = ['.git', '.git/', '.svn/','Rakefile', 'composer.json', 'package.json']
   let g:rooter_use_lcd = 1
 
 "CamelCaseMotion
