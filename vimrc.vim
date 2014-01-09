@@ -12,9 +12,9 @@ call vundle#rc()
 Bundle 'gmarik/vundle' 
 Bundle 'tpope/vim-vividchalk'
 Bundle 'L9'
+Bundle 'TaskList.vim'
 Bundle 'airblade/vim-rooter' 
 Bundle 'kien/ctrlp.vim'
-Bundle 'samsonw/vim-task'
 Bundle 'mileszs/ack.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'bling/vim-airline'
@@ -41,10 +41,10 @@ Bundle 'tangledhelix/vim-octopress'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "briancollins/vim-jst"
+Bundle "mustache/vim-mustache-handlebars"
+Bundle 'mmikitka/vim-drupal'
+Bundle 'technosophos/drupal-snippets'
 
-if has('gui_macvim')
-	Bundle 'TaskList.vim'
-endif
 if has("gui_win32") || has("gui_win64")
 	Bundle 'xolox/vim-shell'
 endif
@@ -116,19 +116,6 @@ endif
 	autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-"Drupal Syntax highlight
-if has("autocmd")
-  " Drupal *.module and *.install files.
-  augroup module
-    autocmd BufRead,BufNewFile *.module set filetype=php
-    autocmd BufRead,BufNewFile *.install set filetype=php
-    autocmd BufRead,BufNewFile *.test set filetype=php
-    autocmd BufRead,BufNewFile *.inc set filetype=php
-    autocmd BufRead,BufNewFile *.profile set filetype=php
-    autocmd BufRead,BufNewFile *.view set filetype=php
-  augroup END
-endif
-syntax on
 
 "Vim Task"
 	function TaskConfig()
@@ -163,3 +150,6 @@ syntax on
   sunmap w
   sunmap b
   sunmap e
+
+"Emmet
+  let g:user_emmet_leader_key='<C-Z>'
