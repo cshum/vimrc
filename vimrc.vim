@@ -144,7 +144,7 @@ syntax on
 "CtrlP
 	command -range CC CtrlPClearCache
 	let g:ctrlp_custom_ignore = {
-	  \ 'dir':  '\v[\/](\.git|node_modules|build|system|vendor|lib|libs)$',
+	  \ 'dir':  '\v[\/](\.git|node_modules|build|system|vendor|lib|libs|sites\/default\/files)$',
 	  \ 'file': '\v\.(exe|so|dll|jpg|png|gif|ai|db)$',
 	  \ 'link': 'some_bad_symbolic_links',
 	  \ }
