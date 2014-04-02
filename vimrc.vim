@@ -42,6 +42,7 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "briancollins/vim-jst"
 Bundle "mustache/vim-mustache-handlebars"
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'mmikitka/vim-drupal'
 Bundle 'technosophos/drupal-snippets'
 
