@@ -69,7 +69,7 @@ set autoread " auto reload files
 set incsearch " highlight when typing search
 set hlsearch " highlight search
 set nohidden "clear buffer when close
-set directory=~/tmp//,/var/tmp//,/tmp//,.
+set directory=/tmp//,/var/tmp//,~/tmp//,.
 au BufNewFile,BufRead *.tex,*.md,*.markdown setlocal spell "spellcheck
 colorscheme vividchalk
 
