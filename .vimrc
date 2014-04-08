@@ -19,7 +19,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'bling/vim-airline'
 Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
+"Bundle 'honza/vim-snippets'
 Bundle 'bkad/CamelCaseMotion'
 Bundle 'captbaritone/better-indent-support-for-php-with-html'
 Bundle 'majutsushi/tagbar'
@@ -44,7 +44,7 @@ Bundle "briancollins/vim-jst"
 Bundle "mustache/vim-mustache-handlebars"
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mmikitka/vim-drupal'
-Bundle 'technosophos/drupal-snippets'
+"Bundle 'technosophos/drupal-snippets'
 
 if has("gui_win32") || has("gui_win64")
 	Bundle 'xolox/vim-shell'
