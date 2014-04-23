@@ -155,3 +155,6 @@ endif
 
 "Emmet
   let g:user_emmet_leader_key='<C-Z>'
+
+"Coffeescript
+  autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
