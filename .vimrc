@@ -158,3 +158,4 @@ endif
 
 "Coffeescript
   autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+  autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
