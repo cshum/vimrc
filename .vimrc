@@ -48,7 +48,7 @@ Bundle 'tomtom/tcomment_vim'
 if has("gui_win32") || has("gui_win64")
 	Bundle 'xolox/vim-shell'
 endif
-colorscheme elflord
+colorscheme koehler
 if has('gui_running')
   Bundle 'tpope/vim-vividchalk'
 	Bundle 'skammer/vim-css-color'
@@ -163,10 +163,10 @@ autocmd FileType coffee nnoremap <buffer> <leader>cm :CoffeeMake<cr>
 autocmd FileType coffee nnoremap <buffer> <leader>cM :CoffeeMake
 
 " Quickfix
-nnoremap <leader>j :cnext<cr>
-nnoremap <leader>k :cprev<cr>
-nnoremap <leader>h :cfirst<cr>
-nnoremap <leader>l :clast<cr>
+nnoremap <leader><down> :cnext<cr>
+nnoremap <leader><up> :cprev<cr>
+nnoremap <leader><left> :cfirst<cr>
+nnoremap <leader><right> :clast<cr>
 
 "Fugitive
 autocmd User Fugitive noremap <buffer> <leader>gs :Gstatus<cr>
