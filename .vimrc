@@ -9,7 +9,6 @@ call vundle#rc()
 
 
 Bundle 'gmarik/vundle' 
-Bundle 'tpope/vim-vividchalk'
 Bundle 'L9'
 Bundle 'TaskList.vim'
 Bundle 'airblade/vim-rooter' 
@@ -45,14 +44,16 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'mmikitka/vim-drupal'
 Bundle 'walm/jshint.vim'
 Bundle 'tomtom/tcomment_vim'
-Bundle 'lukaszkorecki/CoffeeTags'
 "Bundle 'technosophos/drupal-snippets'
 
 if has("gui_win32") || has("gui_win64")
 	Bundle 'xolox/vim-shell'
 endif
+colorscheme elflord
 if has('gui_running')
+  Bundle 'tpope/vim-vividchalk'
 	Bundle 'skammer/vim-css-color'
+  colorscheme vividchalk
 endif
 
 Bundle 'godlygeek/csapprox'
@@ -73,7 +74,6 @@ set hlsearch " highlight search
 set nohidden "clear buffer when close
 set directory=/tmp//,/var/tmp//,~/tmp//,.
 au BufNewFile,BufRead *.tex,*.md,*.markdown setlocal spell "spellcheck
-colorscheme vividchalk
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
 
@@ -133,18 +133,24 @@ endif
 	endif
 
 "CtrlP
-	command -range CC CtrlPClearCache
-	let g:ctrlp_custom_ignore = {
-	  \ 'dir':  '\v[\/](\.git|node_modules|build|system|vendor|lib|libs|sites\/default\/files)$',
-	  \ 'file': '\v\.(exe|so|dll|jpg|png|gif|ai|db)$',
-	  \ 'link': 'some_bad_symbolic_links',
-	  \ }
+  let g:ctrlp_use_caching = 0
+  let g:ctrlp_user_command = {
+  \ 'types': {
+      \ 1: ['.git', 'cd %s && git ls-files --exclude-standard'],
+      \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+      \ },
+    \ 'fallback': 'find %s/.. -type f'
+  \ }
+  let g:ctrlp_custom_ignore = {
+    \ 'dir': '\.git$\|\.hg$\|\.svn$',
+    \ 'file': '\v\.(exe|so|dll|jpg|png|gif|ai|db)$'
+  \ }
 
 "Easy Motion"
 	let g:EasyMotion_leader_key = '<Leader>'
 
 "Rooter
-  let g:rooter_patterns = ['.git', '.git/', '.svn/','Rakefile', 'composer.json', 'package.json']
+  let g:rooter_patterns = ['.git', '.svn/']
   let g:rooter_use_lcd = 1
 
 "CamelCaseMotion
@@ -157,5 +163,3 @@ endif
 
 "Emmet
   let g:user_emmet_leader_key='<C-Z>'
-
-"Coffeescript
