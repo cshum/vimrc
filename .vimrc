@@ -61,7 +61,8 @@ syntax on
 filetype plugin indent on
 
 set number " show line numbers
-set ai
+set wildmenu
+set autoindent
 set smartindent
 set tabstop=2
 set shiftwidth=2
@@ -71,12 +72,14 @@ set autoread " auto reload files
 set incsearch " highlight when typing search
 set hlsearch " highlight search
 set nohidden "clear buffer when close
-set directory=/tmp//,/var/tmp//,~/tmp//,.
+set directory=~/.vim "swp dir
 au BufNewFile,BufRead *.tex,*.md,*.markdown setlocal spell "spellcheck
+au VimResized * :wincmd = "Resize splits when the window is resized
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
+set wildignore=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,coverage/*,public/*,tmp/*,log/*,doc/*
 
-set grepprg=grep\ -nH\ $*
+",pa to toggle paste mode
+map <leader>pa :set paste! paste?<CR> 
 
 " Make searches case-sensitive only if they contain upper-case characters
 set ignorecase
