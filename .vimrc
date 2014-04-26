@@ -42,6 +42,8 @@ Bundle 'mmikitka/vim-drupal'
 Bundle 'walm/jshint.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'tomtom/tcomment_vim'
+Bundle 'sjl/gundo.vim'
+Bundle 'closetag.vim'
 "Bundle 'airblade/vim-gitgutter'
 "Bundle 'technosophos/drupal-snippets'
 "Bundle 'honza/vim-snippets'
@@ -190,3 +192,6 @@ nmap <Leader>a: :Tabularize /:\zs/l0r1<CR>
 vmap <Leader>a: :Tabularize /:\zs/l0r1<CR>
 nmap <Leader>a, :Tabularize /,\zs/l1r0<CR>
 vmap <Leader>a, :Tabularize /,\zs/l1r0<CR>
+
+" Gundo Vim
+noremap <leader>gt :GundoToggle<CR>
