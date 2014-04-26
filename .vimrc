@@ -10,7 +10,6 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle' 
 Bundle 'L9'
-Bundle 'TaskList.vim'
 Bundle 'airblade/vim-rooter' 
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
@@ -79,6 +78,12 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 set grepprg=grep\ -nH\ $*
 
+" Make searches case-sensitive only if they contain upper-case characters
+set ignorecase
+set smartcase
+
+let mapleader=","
+
 "GUI Condition
 if has('gui_running')
 	set guioptions-=T  "remove toolbar
@@ -103,15 +108,15 @@ endif
   let g:airline_right_sep=''
 
 "NERD Tree stuffs
-	command -range NT NERDTree
-	command -range NF NERDTreeFind
+  map <Leader>nt :NERDTree<CR>
+  map <Leader>nf :NERDTreeFind<CR>
 	let g:NERDTreeWinSize = 25
   let NERDTreeChDirMode = 2
 "TagBar stuff
-	command -range TB TagbarToggle
+  map <leader>tb :TagbarToggle<cr>
 	let g:tagbar_width = 30
 "TaskList stuff
-	command -range TL TaskList
+  map <Leader>tl :TaskList<CR>
 "AutoComplete
 	set ofu=syntaxcomplete#Complete
 	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -120,17 +125,6 @@ endif
 	autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-"Vim Task"
-	function TaskConfig()
-		setfiletype task
-		nmap t :call Toggle_task_status()<CR>
-		set nonumber
-		set nowrap
-	endfunction
-	if has('gui_macvim')
-		autocmd BufNewFile,BufRead todo.txt,*.task,*.tasks :call TaskConfig()
-	endif
 
 "CtrlP
   let g:ctrlp_use_caching = 0
@@ -163,3 +157,31 @@ endif
 
 "Emmet
   let g:user_emmet_leader_key='<C-Z>'
+
+
+"CoffeeScript
+  "Compile the current buffer in a vertical split
+  autocmd FileType coffee nnoremap <buffer> <leader>cc :CoffeeCompile vert<cr>
+  " Compile the current selection in a vertical split
+  autocmd FileType coffee vnoremap <buffer> <leader>cc :CoffeeCompile vert<cr>
+  " Compile and run the current buffer
+  autocmd FileType coffee nnoremap <buffer> <leader>cr :CoffeeRun<cr>
+  autocmd FileType coffee vnoremap <buffer> <leader>cR :CoffeeRun<cr>
+  " Compile the current buffer, output the result to a new file.
+  autocmd FileType coffee nnoremap <buffer> <leader>cm :CoffeeMake<cr>
+  " Same as above, Intentionally has no <cr> so an option can be added
+  autocmd FileType coffee nnoremap <buffer> <leader>cM :CoffeeMake
+
+"Fugitive
+  "Alias Gpush
+  autocmd User Fugitive command! -buffer Gpush exe 'Git push'
+  "Show git status for the repo
+  autocmd User Fugitive noremap <buffer> <leader>gs :Gstatus<cr>
+  "Write the current buffer to git index
+  autocmd User Fugitive noremap <buffer> <leader>gw :Gwrite<cr>
+  "Commit current git index
+  autocmd User Fugitive noremap <buffer> <leader>gc :Gcommit -m ""<left>
+  "Push current branch upstream
+  autocmd User Fugitive noremap <buffer> <leader>gp :Gpush<cr>
+
+  autocmd VimEnter .git/PULLREQ_EDIT_MSG setl wrap textwidth=0
