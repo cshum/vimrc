@@ -7,7 +7,6 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-
 Bundle 'gmarik/vundle' 
 Bundle 'L9'
 Bundle 'airblade/vim-rooter' 
@@ -42,6 +41,7 @@ Bundle "mustache/vim-mustache-handlebars"
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mmikitka/vim-drupal'
 Bundle 'walm/jshint.vim'
+Bundle 'godlygeek/tabular'
 Bundle 'tomtom/tcomment_vim'
 "Bundle 'technosophos/drupal-snippets'
 
@@ -78,9 +78,6 @@ au VimResized * :wincmd = "Resize splits when the window is resized
 
 set wildignore=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,coverage/*,public/*,tmp/*,log/*,doc/*
 
-",pa to toggle paste mode
-map <leader>pa :set paste! paste?<CR> 
-
 " Make searches case-sensitive only if they contain upper-case characters
 set ignorecase
 set smartcase
@@ -106,85 +103,95 @@ if has('gui_gtk2')
 endif
 
 "Airline
-  " remove separators
-  let g:airline_left_sep=''
-  let g:airline_right_sep=''
+" remove separators
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 
 "NERD Tree stuffs
-  map <Leader>nt :NERDTree<CR>
-  map <Leader>nf :NERDTreeFind<CR>
-	let g:NERDTreeWinSize = 25
-  let NERDTreeChDirMode = 2
-"TagBar stuff
-  map <leader>tb :TagbarToggle<cr>
-	let g:tagbar_width = 30
-"TaskList stuff
-  map <Leader>tl :TaskList<CR>
+map <Leader>nt :NERDTree<CR>
+map <Leader>nf :NERDTreeFind<CR>
+let g:NERDTreeWinSize = 25
+let NERDTreeChDirMode = 2
+
+"TagBar
+map <leader>tb :TagbarToggle<cr>
+let g:tagbar_width = 30
+
 "AutoComplete
-	set ofu=syntaxcomplete#Complete
-	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-	autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-	autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+set ofu=syntaxcomplete#Complete
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 "CtrlP
-  let g:ctrlp_use_caching = 0
-  let g:ctrlp_user_command = {
-  \ 'types': {
-      \ 1: ['.git', 'cd %s && git ls-files --exclude-standard'],
-      \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-      \ },
-    \ 'fallback': 'find %s/.. -type f'
-  \ }
-  let g:ctrlp_custom_ignore = {
-    \ 'dir': '\.git$\|\.hg$\|\.svn$',
-    \ 'file': '\v\.(exe|so|dll|jpg|png|gif|ai|db)$'
-  \ }
+let g:ctrlp_use_caching = 0
+let g:ctrlp_user_command = {
+\ 'types': {
+    \ 1: ['.git', 'cd %s && git ls-files --exclude-standard'],
+    \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+    \ },
+  \ 'fallback': 'find %s/.. -type f'
+\ }
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\.git$\|\.hg$\|\.svn$',
+  \ 'file': '\v\.(exe|so|dll|jpg|png|gif|ai|db)$'
+\ }
 
 "Easy Motion"
-	let g:EasyMotion_leader_key = '<Leader>'
+let g:EasyMotion_leader_key = '<Leader>'
 
 "Rooter
-  let g:rooter_patterns = ['.git', '.svn/']
-  let g:rooter_use_lcd = 1
+let g:rooter_patterns = ['.git', '.svn/']
+let g:rooter_use_lcd = 1
 
 "CamelCaseMotion
-  map <silent> w <Plug>CamelCaseMotion_w
-  map <silent> b <Plug>CamelCaseMotion_b
-  map <silent> e <Plug>CamelCaseMotion_e
-  sunmap w
-  sunmap b
-  sunmap e
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+sunmap w
+sunmap b
+sunmap e
 
 "Emmet
-  let g:user_emmet_leader_key='<C-Z>'
+let g:user_emmet_expandabbr_key = '<tab>'
 
 
 "CoffeeScript
-  "Compile the current buffer in a vertical split
-  autocmd FileType coffee nnoremap <buffer> <leader>cc :CoffeeCompile vert<cr>
-  " Compile the current selection in a vertical split
-  autocmd FileType coffee vnoremap <buffer> <leader>cc :CoffeeCompile vert<cr>
-  " Compile and run the current buffer
-  autocmd FileType coffee nnoremap <buffer> <leader>cr :CoffeeRun<cr>
-  autocmd FileType coffee vnoremap <buffer> <leader>cR :CoffeeRun<cr>
-  " Compile the current buffer, output the result to a new file.
-  autocmd FileType coffee nnoremap <buffer> <leader>cm :CoffeeMake<cr>
-  " Same as above, Intentionally has no <cr> so an option can be added
-  autocmd FileType coffee nnoremap <buffer> <leader>cM :CoffeeMake
+"Compile the current buffer in a vertical split
+autocmd FileType coffee nnoremap <buffer> <leader>cc :CoffeeCompile vert<cr>
+" Compile the current selection in a vertical split
+autocmd FileType coffee vnoremap <buffer> <leader>cc :CoffeeCompile vert<cr>
+" Compile and run the current buffer
+autocmd FileType coffee nnoremap <buffer> <leader>cr :CoffeeRun<cr>
+autocmd FileType coffee vnoremap <buffer> <leader>cR :CoffeeRun<cr>
+" Compile the current buffer, output the result to a new file.
+autocmd FileType coffee nnoremap <buffer> <leader>cm :CoffeeMake<cr>
+" Same as above, Intentionally has no <cr> so an option can be added
+autocmd FileType coffee nnoremap <buffer> <leader>cM :CoffeeMake
 
 "Fugitive
-  "Alias Gpush
-  autocmd User Fugitive command! -buffer Gpush exe 'Git push'
-  "Show git status for the repo
-  autocmd User Fugitive noremap <buffer> <leader>gs :Gstatus<cr>
-  "Write the current buffer to git index
-  autocmd User Fugitive noremap <buffer> <leader>gw :Gwrite<cr>
-  "Commit current git index
-  autocmd User Fugitive noremap <buffer> <leader>gc :Gcommit -m ""<left>
-  "Push current branch upstream
-  autocmd User Fugitive noremap <buffer> <leader>gp :Gpush<cr>
+"Alias Gpush
+autocmd User Fugitive command! -buffer Gpush exe 'Git push'
+"Show git status for the repo
+autocmd User Fugitive noremap <buffer> <leader>gs :Gstatus<cr>
+"Write the current buffer to git index
+autocmd User Fugitive noremap <buffer> <leader>gw :Gwrite<cr>
+"Commit current git index
+autocmd User Fugitive noremap <buffer> <leader>gc :Gcommit -m ""<left>
+autocmd User Fugitive noremap <buffer> <leader>gd :Gdiff HEAD^
+"Push current branch upstream
+autocmd User Fugitive noremap <buffer> <leader>gp :Gpush<cr>
 
-  autocmd VimEnter .git/PULLREQ_EDIT_MSG setl wrap textwidth=0
+autocmd VimEnter .git/PULLREQ_EDIT_MSG setl wrap textwidth=0
+
+" Tabular
+nmap <Leader>a= :Tabularize /^[^=]*\zs=>\?<CR>
+vmap <Leader>a= :Tabularize /^[^=]*\zs=>\?<CR>
+nmap <Leader>a: :Tabularize /:\zs/l0r1<CR>
+vmap <Leader>a: :Tabularize /:\zs/l0r1<CR>
+nmap <Leader>a, :Tabularize /,\zs/l1r0<CR>
+vmap <Leader>a, :Tabularize /,\zs/l1r0<CR>
+
