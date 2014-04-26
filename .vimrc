@@ -60,6 +60,7 @@ Bundle 'godlygeek/csapprox'
 syntax on
 filetype plugin indent on
 
+
 set number " show line numbers
 set wildmenu
 set autoindent
@@ -153,16 +154,12 @@ sunmap e
 let g:user_emmet_expandabbr_key = '<tab>'
 
 "CoffeeScript
-"Compile the current buffer in a vertical split
 autocmd FileType coffee nnoremap <buffer> <leader>cc :CoffeeCompile vert<cr>
-" Compile the current selection in a vertical split
 autocmd FileType coffee vnoremap <buffer> <leader>cc :CoffeeCompile vert<cr>
-" Compile and run the current buffer
 autocmd FileType coffee nnoremap <buffer> <leader>cr :CoffeeRun<cr>
 autocmd FileType coffee vnoremap <buffer> <leader>cR :CoffeeRun<cr>
-" Compile the current buffer, output the result to a new file.
+autocmd FileType coffee nnoremap <buffer> <leader>cl :CoffeeLint<cr>
 autocmd FileType coffee nnoremap <buffer> <leader>cm :CoffeeMake<cr>
-" Same as above, Intentionally has no <cr> so an option can be added
 autocmd FileType coffee nnoremap <buffer> <leader>cM :CoffeeMake
 
 " Quickfix
@@ -172,20 +169,14 @@ nnoremap <leader>h :cfirst<cr>
 nnoremap <leader>l :clast<cr>
 
 "Fugitive
-"Alias Gpush
-autocmd User Fugitive command! -buffer Gpush exe 'Git push'
-"Show git status for the repo
 autocmd User Fugitive noremap <buffer> <leader>gs :Gstatus<cr>
 autocmd User Fugitive noremap <buffer> <leader>gg :Ggrep ""<left>
-"Write the current buffer to git index
 autocmd User Fugitive noremap <buffer> <leader>gw :Gwrite<cr>
-"Commit current git index
 autocmd User Fugitive noremap <buffer> <leader>gc :Gcommit -m ""<left>
 autocmd User Fugitive noremap <buffer> <leader>gd :Gdiff<cr>
 autocmd User Fugitive noremap <buffer> <leader>gl :Glog<cr>
 autocmd User Fugitive noremap <buffer> <leader>gal :Glog --<cr>
-"Push current branch upstream
-autocmd User Fugitive noremap <buffer> <leader>gp :Gpush<cr>
+autocmd User Fugitive noremap <buffer> <leader>gp :Git push 
 
 autocmd VimEnter .git/PULLREQ_EDIT_MSG setl wrap textwidth=0
 
@@ -196,4 +187,3 @@ nmap <Leader>a: :Tabularize /:\zs/l0r1<CR>
 vmap <Leader>a: :Tabularize /:\zs/l0r1<CR>
 nmap <Leader>a, :Tabularize /,\zs/l1r0<CR>
 vmap <Leader>a, :Tabularize /,\zs/l1r0<CR>
-
