@@ -1,4 +1,3 @@
-set nocompatible
 set laststatus=2   "Always show statusline
 set encoding=utf-8 
 set t_Co=256
@@ -44,6 +43,9 @@ Bundle "briancollins/vim-jst"
 Bundle "mustache/vim-mustache-handlebars"
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mmikitka/vim-drupal'
+Bundle 'walm/jshint.vim'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'lukaszkorecki/CoffeeTags'
 "Bundle 'technosophos/drupal-snippets'
 
 if has("gui_win32") || has("gui_win64")
@@ -157,5 +159,3 @@ endif
   let g:user_emmet_leader_key='<C-Z>'
 
 "Coffeescript
-  autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
-  autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
