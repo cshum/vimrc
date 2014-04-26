@@ -82,7 +82,7 @@ set wildignore=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,coverage/*,public
 set ignorecase
 set smartcase
 
-let mapleader=","
+let mapleader=" "
 
 "GUI Condition
 if has('gui_running')
@@ -128,13 +128,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 "CtrlP
 let g:ctrlp_use_caching = 0
-let g:ctrlp_user_command = {
-\ 'types': {
-    \ 1: ['.git', 'cd %s && git ls-files --exclude-standard'],
-    \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-    \ },
-  \ 'fallback': 'find %s/.. -type f'
-\ }
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --exclude-standard']
 let g:ctrlp_custom_ignore = {
   \ 'dir': '\.git$\|\.hg$\|\.svn$',
   \ 'file': '\v\.(exe|so|dll|jpg|png|gif|ai|db)$'
@@ -158,7 +152,6 @@ sunmap e
 "Emmet
 let g:user_emmet_expandabbr_key = '<tab>'
 
-
 "CoffeeScript
 "Compile the current buffer in a vertical split
 autocmd FileType coffee nnoremap <buffer> <leader>cc :CoffeeCompile vert<cr>
@@ -172,16 +165,25 @@ autocmd FileType coffee nnoremap <buffer> <leader>cm :CoffeeMake<cr>
 " Same as above, Intentionally has no <cr> so an option can be added
 autocmd FileType coffee nnoremap <buffer> <leader>cM :CoffeeMake
 
+" Quickfix
+nnoremap <leader>j :cnext<cr>
+nnoremap <leader>k :cprev<cr>
+nnoremap <leader>h :cfirst<cr>
+nnoremap <leader>l :clast<cr>
+
 "Fugitive
 "Alias Gpush
 autocmd User Fugitive command! -buffer Gpush exe 'Git push'
 "Show git status for the repo
 autocmd User Fugitive noremap <buffer> <leader>gs :Gstatus<cr>
+autocmd User Fugitive noremap <buffer> <leader>gg :Ggrep ""<left>
 "Write the current buffer to git index
 autocmd User Fugitive noremap <buffer> <leader>gw :Gwrite<cr>
 "Commit current git index
 autocmd User Fugitive noremap <buffer> <leader>gc :Gcommit -m ""<left>
-autocmd User Fugitive noremap <buffer> <leader>gd :Gdiff HEAD^
+autocmd User Fugitive noremap <buffer> <leader>gd :Gdiff<cr>
+autocmd User Fugitive noremap <buffer> <leader>gl :Glog<cr>
+autocmd User Fugitive noremap <buffer> <leader>gal :Glog --<cr>
 "Push current branch upstream
 autocmd User Fugitive noremap <buffer> <leader>gp :Gpush<cr>
 
