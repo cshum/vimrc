@@ -154,7 +154,7 @@ sunmap b
 sunmap e
 
 "Emmet
-let g:user_emmet_expandabbr_key = '<tab>'
+" let g:user_emmet_expandabbr_key = '<tab>'
 
 "CoffeeScript
 autocmd FileType coffee nnoremap <buffer> <leader>cc :CoffeeCompile vert<cr>
