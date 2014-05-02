@@ -1,68 +1,72 @@
+set nocompatible
+filetype off
+
 set laststatus=2   "Always show statusline
 set encoding=utf-8 
 set t_Co=256
 
 "Vundle
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle' 
-Bundle 'L9'
-Bundle 'airblade/vim-rooter' 
-Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'bling/vim-airline'
-Bundle 'garbas/vim-snipmate'
-Bundle 'bkad/CamelCaseMotion'
-Bundle 'captbaritone/better-indent-support-for-php-with-html'
-Bundle 'majutsushi/tagbar'
-Bundle 'Xuyuanp/git-nerdtree'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'edsono/vim-matchit'
-Bundle 'scrooloose/syntastic'
-Bundle 'StanAngeloff/php.vim'
-Bundle 'shawncplus/phpcomplete.vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'othree/html5.vim'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'groenewege/vim-less'
-Bundle 'pangloss/vim-javascript'
-Bundle 'tpope/vim-markdown'
-Bundle 'tangledhelix/vim-octopress'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "briancollins/vim-jst"
-Bundle "mustache/vim-mustache-handlebars"
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'mmikitka/vim-drupal'
-Bundle 'walm/jshint.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'sjl/gundo.vim'
-"Bundle 'airblade/vim-gitgutter'
-"Bundle 'technosophos/drupal-snippets'
-"Bundle 'honza/vim-snippets'
-"Bundle 'scrooloose/nerdtree'
+Plugin 'gmarik/vundle' 
+Plugin 'L9'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'airblade/vim-rooter' 
+Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'bling/vim-airline'
+Plugin 'garbas/vim-snipmate'
+Plugin 'bkad/CamelCaseMotion'
+Plugin 'captbaritone/better-indent-support-for-php-with-html'
+Plugin 'majutsushi/tagbar'
+Plugin 'Xuyuanp/git-nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'edsono/vim-matchit'
+Plugin 'scrooloose/syntastic'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'othree/html5.vim'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'groenewege/vim-less'
+Plugin 'pangloss/vim-javascript'
+Plugin 'tpope/vim-markdown'
+Plugin 'tangledhelix/vim-octopress'
+Plugin 'tomtom/tlib_vim'
+Plugin 'briancollins/vim-jst'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'mmikitka/vim-drupal'
+Plugin 'walm/jshint.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'sjl/gundo.vim'
+"Plugin 'airblade/vim-gitgutter'
+"Plugin 'technosophos/drupal-snippets'
+"Plugin 'honza/vim-snippets'
+"Plugin 'scrooloose/nerdtree'
 
 if has("gui_win32") || has("gui_win64")
-	Bundle 'xolox/vim-shell'
+	Plugin 'xolox/vim-shell'
 endif
 colorscheme koehler
 if has('gui_running')
-  Bundle 'tpope/vim-vividchalk'
-	Bundle 'skammer/vim-css-color'
-  colorscheme vividchalk
+  Plugin 'tpope/vim-vividchalk'
+	Plugin 'skammer/vim-css-color'
 endif
+Plugin 'godlygeek/csapprox'
 
-Bundle 'godlygeek/csapprox'
+call vundle#end()
 
 syntax on
 filetype plugin indent on
-
+if has('gui_running')
+  colorscheme vividchalk
+endif
 
 set number " show line numbers
 set wildmenu
