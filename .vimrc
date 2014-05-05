@@ -110,6 +110,9 @@ endif
 if has('gui_gtk2')
 endif
 
+"cd shortcut
+noremap <leader>cd :cd ~/Workspace/
+
 "Airline
 " remove separators
 let g:airline_left_sep=''
