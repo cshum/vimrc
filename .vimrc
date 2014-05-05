@@ -161,9 +161,7 @@ sunmap b
 sunmap e
 
 "Emmet
-let g:user_emmet_install_global = 0
-let g:user_emmet_expandabbr_key = '<tab>'
-autocmd FileType html EmmetInstall
+" let g:user_emmet_expandabbr_key = '<tab>'
 
 "CoffeeScript
 autocmd FileType coffee nnoremap <buffer> <leader>cc :CoffeeCompile vert<cr>
