@@ -183,8 +183,8 @@ autocmd User Fugitive noremap <buffer> <leader>gc :Gcommit -m ""<left>
 autocmd User Fugitive noremap <buffer> <leader>gd :Gdiff<cr>
 autocmd User Fugitive noremap <buffer> <leader>gl :Glog<cr>
 autocmd User Fugitive noremap <buffer> <leader>gal :Glog --<cr>
-autocmd User Fugitive noremap <buffer> <leader>gp :Git pull 
-autocmd User Fugitive noremap <buffer> <leader>gh :Git push 
+autocmd User Fugitive noremap <buffer> <leader>gpl :Git pull 
+autocmd User Fugitive noremap <buffer> <leader>gph :Git push 
 
 autocmd VimEnter .git/PULLREQ_EDIT_MSG setl wrap textwidth=0
 
