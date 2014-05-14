@@ -112,7 +112,7 @@ if has('gui_gtk2')
 endif
 
 "cd shortcut
-noremap <leader>ws :cd ~/Workspace/
+noremap <leader><leader> :cd ~/Workspace/
 
 "Airline
 " remove separators
