@@ -115,6 +115,9 @@ endif
 "cd shortcut
 noremap <leader><leader> :cd ~/Workspace/
 
+"ConqueTerm
+noremap <leader>ct :ConqueTerm 
+
 "Airline
 " remove separators
 let g:airline_left_sep=''
