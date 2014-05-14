@@ -13,6 +13,7 @@ Plugin 'gmarik/vundle'
 Plugin 'L9'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'airblade/vim-rooter' 
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'Lokaltog/vim-easymotion'
@@ -111,7 +112,7 @@ if has('gui_gtk2')
 endif
 
 "cd shortcut
-noremap <leader>cd :cd ~/Workspace/
+noremap <leader>ws :cd ~/Workspace/
 
 "Airline
 " remove separators
