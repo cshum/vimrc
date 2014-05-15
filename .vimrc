@@ -118,8 +118,8 @@ endif
 noremap <leader><leader> :cd ~/Workspace/
 
 "VimShell
-noremap <leader>sc :VimShellCreate<CR>
-noremap <leader>ss :VimShellSendString 
+noremap <leader>vv :VimShellCreate<CR>
+noremap <leader>vs :VimShellSendString 
 autocmd FileType vimshell setl nonumber
 autocmd FileType vimshell setl norelativenumber
 
@@ -233,3 +233,26 @@ noremap <leader>gt :GundoToggle<CR>
 
 " JSHint
 noremap <leader>jh :JSHint<CR>
+
+"Save session
+fu! SaveSession()
+  execute 'mksession! ~/.vim/session.vim'
+endfunction
+
+fu! RestoreSession()
+  " if filereadable('~/.vim/session.vim')
+    execute 'so ~/.vim/session.vim'
+    if bufexists(1)
+      for l in range(1, bufnr('$'))
+        if bufwinnr(l) == -1
+          exec 'sbuffer ' . l
+        endif
+      endfor
+    endif
+  " endif
+endfunction
+
+noremap <leader>ss :call SaveSession()<CR>
+noremap <leader>rs :call RestoreSession()<CR>
+
+set sessionoptions-=options  " Don't save options
