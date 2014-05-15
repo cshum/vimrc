@@ -143,9 +143,9 @@ function! s:check_back_space()
 endfunction
 
 "Airline
-" remove separators
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+let g:airline_detect_whitespace=0
 
 "NERD Tree stuffs
 map <Leader>nt :NERDTree<CR>
