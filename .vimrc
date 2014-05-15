@@ -11,7 +11,8 @@ call vundle#begin()
 
 Plugin 'gmarik/vundle' 
 Plugin 'L9'
-Plugin 'carlobaldassi/ConqueTerm'
+Plugin 'shougo/vimproc'
+Plugin 'shougo/vimshell.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'airblade/vim-rooter' 
 Plugin 'christoomey/vim-tmux-navigator'
@@ -115,8 +116,8 @@ endif
 "cd shortcut
 noremap <leader><leader> :cd ~/Workspace/
 
-"ConqueTerm
-noremap <leader>ct :ConqueTerm 
+"VimShell
+noremap <leader>vs :VimShell
 
 "Airline
 " remove separators
