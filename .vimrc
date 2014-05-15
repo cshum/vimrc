@@ -117,7 +117,7 @@ endif
 noremap <leader><leader> :cd ~/Workspace/
 
 "VimShell
-noremap <leader>vs :VimShell
+noremap <leader>vs :VimShell<CR>
 
 "Airline
 " remove separators
