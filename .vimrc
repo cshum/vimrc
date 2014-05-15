@@ -118,7 +118,8 @@ endif
 noremap <leader><leader> :cd ~/Workspace/
 
 "VimShell
-noremap <leader>vs :VimShellCreate<CR>
+noremap <leader>sc :VimShellCreate<CR>
+noremap <leader>ss :VimShellSendString 
 autocmd FileType vimshell setl nonumber
 autocmd FileType vimshell setl norelativenumber
 
@@ -194,7 +195,6 @@ sunmap e
 
 "CoffeeScript
 autocmd FileType coffee nnoremap <buffer> <leader>cc :CoffeeCompile vert<cr>
-autocmd FileType coffee vnoremap <buffer> <leader>cc :CoffeeCompile vert<cr>
 autocmd FileType coffee nnoremap <buffer> <leader>cr :CoffeeRun<cr>
 autocmd FileType coffee vnoremap <buffer> <leader>cR :CoffeeRun<cr>
 autocmd FileType coffee nnoremap <buffer> <leader>cl :CoffeeLint<cr>
