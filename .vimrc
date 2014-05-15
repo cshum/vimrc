@@ -11,8 +11,9 @@ call vundle#begin()
 
 Plugin 'gmarik/vundle' 
 Plugin 'L9'
-Plugin 'shougo/vimproc'
-Plugin 'shougo/vimshell.vim'
+Plugin 'Shougo/vimproc'
+Plugin 'Shougo/vimshell.vim'
+Plugin 'Shougo/neocomplcache.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'airblade/vim-rooter' 
 Plugin 'christoomey/vim-tmux-navigator'
@@ -117,7 +118,29 @@ endif
 noremap <leader><leader> :cd ~/Workspace/
 
 "VimShell
-noremap <leader>vs :VimShell<CR>
+noremap <leader>vs :VimShellCreate<CR>
+autocmd FileType vimshell setl nonumber
+autocmd FileType vimshell setl norelativenumber
+
+"NeoComplete
+let g:acp_enableAtStartup = 0 
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_disable_auto_complete = 1
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
+function! s:check_back_space()
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1] =~ '\s'
+endfunction
 
 "Airline
 " remove separators
