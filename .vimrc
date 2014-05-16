@@ -14,7 +14,6 @@ Plugin 'L9'
 Plugin 'Shougo/vimproc'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'Shougo/neocomplcache.vim'
-" Plugin 'tpope/vim-vinegar'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'airblade/vim-rooter' 
 Plugin 'christoomey/vim-tmux-navigator'
@@ -26,7 +25,7 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
 Plugin 'majutsushi/tagbar'
-" Plugin 'Xuyuanp/git-nerdtree'
+Plugin 'Xuyuanp/git-nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'edsono/vim-matchit'
@@ -53,8 +52,7 @@ Plugin 'sjl/gundo.vim'
 "Plugin 'airblade/vim-gitgutter'
 "Plugin 'technosophos/drupal-snippets'
 "Plugin 'honza/vim-snippets'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
+" Plugin 'scrooloose/nerdtree'
 
 if has("gui_win32") || has("gui_win64")
 	Plugin 'xolox/vim-shell'
@@ -248,7 +246,7 @@ noremap <leader>jh :JSHint<CR>
 let g:my_vim_session = "~/.vim/session.vim"
 
 fu! SaveSession()
-  execute 'NERDTreeTabsClose'
+  execute 'tabdo silent NERDTreeClose'
   execute 'mksession! '. g:my_vim_session
 endfunction
 
