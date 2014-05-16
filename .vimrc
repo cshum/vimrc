@@ -110,6 +110,7 @@ endif
 if has('gui_macvim')
 	set sh=/bin/sh 
 	set guifont=Monaco:h13
+  set fu
 endif
 if has("gui_win32") || has("gui_win64")
 	set guifont=Consolas:h11
@@ -263,7 +264,7 @@ fu! RestoreSession()
 endfunction
 
 autocmd VimLeave * call SaveSession()
-noremap <leader>ss :call RestoreSession()<CR>
+autocmd VimEnter * nested call RestoreSession()
 
 set sessionoptions-=options  " Don't save options
 set sessionoptions-=help " Don't save help
