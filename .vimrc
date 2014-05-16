@@ -14,6 +14,7 @@ Plugin 'L9'
 Plugin 'Shougo/vimproc'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'Shougo/neocomplcache.vim'
+" Plugin 'tpope/vim-vinegar'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'airblade/vim-rooter' 
 Plugin 'christoomey/vim-tmux-navigator'
@@ -25,7 +26,7 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
 Plugin 'majutsushi/tagbar'
-Plugin 'Xuyuanp/git-nerdtree'
+" Plugin 'Xuyuanp/git-nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'edsono/vim-matchit'
@@ -52,7 +53,8 @@ Plugin 'sjl/gundo.vim'
 "Plugin 'airblade/vim-gitgutter'
 "Plugin 'technosophos/drupal-snippets'
 "Plugin 'honza/vim-snippets'
-"Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 
 if has("gui_win32") || has("gui_win64")
 	Plugin 'xolox/vim-shell'
@@ -151,6 +153,11 @@ let g:airline_detect_whitespace=0
 "NERD Tree stuffs
 map <Leader>nt :NERDTree<CR>
 map <Leader>nf :NERDTreeFind<CR>
+let g:nerdtree_tabs_open_on_gui_startup = 0
+let g:nerdtree_tabs_synchronize_view = 0
+let g:nerdtree_tabs_synchronize_focus = 0
+let g:nerdtree_tabs_focus_on_files = 1
+let g:nerdtree_tabs_startup_cd = 0
 let g:NERDTreeWinSize = 25
 let NERDTreeChDirMode = 2
 
@@ -235,24 +242,26 @@ noremap <leader>gt :GundoToggle<CR>
 noremap <leader>jh :JSHint<CR>
 
 "Save session
+let g:my_vim_session = "~/.vim/session.vim"
+
 fu! SaveSession()
-  execute 'mksession! ~/.vim/session.vim'
+  execute 'NERDTreeTabsClose'
+  execute 'mksession! '. g:my_vim_session
 endfunction
 
 fu! RestoreSession()
-  " if filereadable('~/.vim/session.vim')
-    execute 'so ~/.vim/session.vim'
-    if bufexists(1)
-      for l in range(1, bufnr('$'))
-        if bufwinnr(l) == -1
-          exec 'sbuffer ' . l
-        endif
-      endfor
-    endif
-  " endif
+  execute 'so ' . g:my_vim_session
+  if bufexists(1)
+    for l in range(1, bufnr('$'))
+      if bufwinnr(l) == -1
+        exec 'sbuffer ' . l
+      endif
+    endfor
+  endif
 endfunction
 
 noremap <leader>ss :call SaveSession()<CR>
 noremap <leader>rs :call RestoreSession()<CR>
 
 set sessionoptions-=options  " Don't save options
+set sessionoptions-=help " Don't save help
