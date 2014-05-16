@@ -237,7 +237,7 @@ nmap <Leader>a, :Tabularize /,\zs/l1r0<CR>
 vmap <Leader>a, :Tabularize /,\zs/l1r0<CR>
 
 " Gundo Vim
-noremap <leader>gt :GundoToggle<CR>
+noremap <leader>gd :GundoToggle<CR>
 
 " JSHint
 noremap <leader>jh :JSHint<CR>
