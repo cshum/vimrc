@@ -68,8 +68,10 @@ Plugin 'godlygeek/csapprox'
 
 call vundle#end()
 
+filetype on
+filetype plugin on
+filetype indent on
 syntax on
-filetype plugin indent on
 if has('gui_running')
   colorscheme vividchalk
 endif
@@ -260,8 +262,8 @@ fu! RestoreSession()
   endif
 endfunction
 
-noremap <leader>ss :call SaveSession()<CR>
-noremap <leader>rs :call RestoreSession()<CR>
+autocmd VimLeave * call SaveSession()
+noremap <leader>ss :call RestoreSession()<CR>
 
 set sessionoptions-=options  " Don't save options
 set sessionoptions-=help " Don't save help
