@@ -49,6 +49,8 @@ Plugin 'walm/jshint.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'sjl/gundo.vim'
+Plugin 'Townk/vim-autoclose'
+Plugin 'closetag.vim'
 "Plugin 'airblade/vim-gitgutter'
 "Plugin 'technosophos/drupal-snippets'
 "Plugin 'honza/vim-snippets'
@@ -202,7 +204,7 @@ sunmap e
 " let g:user_emmet_expandabbr_key = '<tab>'
 
 "CoffeeScript
-autocmd FileType coffee nnoremap <buffer> <leader>cc :CoffeeCompile vert<cr>
+autocmd FileType coffee nnoremap <buffer> <leader>cc :CoffeeCompile bel<cr>
 autocmd FileType coffee nnoremap <buffer> <leader>cr :CoffeeRun<cr>
 autocmd FileType coffee vnoremap <buffer> <leader>cR :CoffeeRun<cr>
 autocmd FileType coffee nnoremap <buffer> <leader>cl :CoffeeLint<cr>
@@ -261,8 +263,10 @@ fu! RestoreSession()
   endif
 endfunction
 
-autocmd VimLeave * call SaveSession()
-autocmd VimEnter * nested call RestoreSession()
+if has('gui_running')
+  autocmd VimLeave * call SaveSession()
+  autocmd VimEnter * nested call RestoreSession()
+endif
 
 set sessionoptions-=options  " Don't save options
 set sessionoptions-=help " Don't save help
