@@ -119,12 +119,13 @@ endif
 if has('gui_gtk2')
 endif
 
-"cd shortcut
 noremap <leader><leader> :cd ~/Workspace/
+noremap <leader>vs :vsplit<CR>
+noremap <leader>hs :spit<CR>
 
 "VimShell
-noremap <leader>vv :VimShellCreate<CR>
-noremap <leader>vs :VimShellSendString 
+noremap <leader>sc :VimShellCreate<CR>
+noremap <leader>ss :VimShellSendString 
 autocmd FileType vimshell setl nonumber
 autocmd FileType vimshell setl norelativenumber
 
