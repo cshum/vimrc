@@ -121,7 +121,7 @@ endif
 
 noremap <leader><leader> :cd ~/Workspace/
 noremap <leader>vs :vsplit<CR>
-noremap <leader>hs :spit<CR>
+noremap <leader>hs :split<CR>
 
 "VimShell
 noremap <leader>sc :VimShellCreate<CR>
