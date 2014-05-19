@@ -124,7 +124,7 @@ noremap <leader>vs :vsplit<CR>
 noremap <leader>hs :split<CR>
 
 "VimShell
-noremap <leader>sc :VimShellCreate<CR>
+noremap <leader>sc :split<CR>:VimShellCreate<CR>
 noremap <leader>ss :VimShellSendString 
 autocmd FileType vimshell setl nonumber
 autocmd FileType vimshell setl norelativenumber
