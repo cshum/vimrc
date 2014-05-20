@@ -110,7 +110,6 @@ endif
 if has('gui_macvim')
 	set sh=/bin/sh 
 	set guifont=Monaco:h13
-  set fu
 endif
 if has("gui_win32") || has("gui_win64")
 	set guifont=Consolas:h11
@@ -254,6 +253,9 @@ fu! SaveSession()
 endfunction
 
 fu! RestoreSession()
+  if has('gui_macvim')
+    set fu
+  endif
   execute 'so ' . g:my_vim_session
   if bufexists(1)
     for l in range(1, bufnr('$'))
