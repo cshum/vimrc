@@ -265,9 +265,12 @@ fu! RestoreSession()
 endfunction
 
 if has('gui_running')
-  autocmd VimLeave * call SaveSession()
-  autocmd VimEnter * nested call RestoreSession()
+  " autocmd VimLeave * call SaveSession()
+  " autocmd VimEnter * nested call RestoreSession()
 endif
+
+noremap <leader>rs :call RestoreSession()<CR>
+noremap <leader>ss :call SaveSession()<CR>
 
 set sessionoptions-=options  " Don't save options
 set sessionoptions-=help " Don't save help
