@@ -253,9 +253,6 @@ fu! SaveSession()
 endfunction
 
 fu! RestoreSession()
-  if has('gui_macvim')
-    set fu
-  endif
   execute 'so ' . g:my_vim_session
   if bufexists(1)
     for l in range(1, bufnr('$'))
