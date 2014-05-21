@@ -116,7 +116,7 @@ if has('gui_running')
 endif
 if has('gui_macvim')
 	set sh=/bin/sh 
-	set guifont=Monaco:h13
+	set guifont=Monaco:h14
 endif
 if has("gui_win32") || has("gui_win64")
 	set guifont=Consolas:h11
