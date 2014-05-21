@@ -110,11 +110,11 @@ let mapleader=" "
 "GUI Condition
 if has('gui_running')
 	set guioptions-=T  "remove toolbar
-	set guioptions-=m  "remove menubar
 	set guioptions+=LlRrb 
 	set guioptions-=LlRrb "remove scrollbars
 endif
 if has('gui_macvim')
+	set guioptions-=m  "remove menubar
 	set sh=/bin/sh 
 	set guifont=Monaco:h14
 endif
