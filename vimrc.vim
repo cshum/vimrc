@@ -18,6 +18,7 @@ endif
 
 Plugin 'gmarik/vundle' 
 Plugin 'L9'
+Plugin 'xolox/vim-misc'
 Plugin 'Shougo/vimproc'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'Shougo/neocomplcache.vim'
