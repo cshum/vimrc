@@ -6,8 +6,15 @@ set encoding=utf-8
 set t_Co=256
 
 "Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has("unix")
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+endif
+if has("win32") || has("win64")
+  set rtp+=~/vimfiles/bundle/Vundle.vim/
+  let path='~/vimfiles/bundle'
+  call vundle#begin(path)
+endif
 
 Plugin 'gmarik/vundle' 
 Plugin 'L9'
