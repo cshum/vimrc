@@ -63,7 +63,7 @@ Plugin 'closetag.vim'
 "Plugin 'honza/vim-snippets'
 " Plugin 'scrooloose/nerdtree'
 
-if has("gui_win32") || has("gui_win64")
+if has("win32") || has("win64")
 	Plugin 'xolox/vim-shell'
 endif
 colorscheme koehler
