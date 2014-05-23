@@ -254,6 +254,7 @@ noremap <leader>jh :JSHint<CR>
 
 "Instant Markdown
 let g:instant_markdown_autostart = 0
+let g:instant_markdown_slow = 1
 noremap <leader>im :InstantMarkdownPreview<CR>
 
 "Save session
