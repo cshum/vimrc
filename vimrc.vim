@@ -21,6 +21,7 @@ Plugin 'L9'
 Plugin 'xolox/vim-misc'
 Plugin 'Shougo/vimproc'
 Plugin 'Shougo/vimshell.vim'
+Plugin 'suan/vim-instant-markdown'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'airblade/vim-rooter' 
@@ -250,6 +251,10 @@ noremap <leader>gd :GundoToggle<CR>
 
 " JSHint
 noremap <leader>jh :JSHint<CR>
+
+"Instant Markdown
+let g:instant_markdown_autostart = 0
+noremap <leader>im :InstantMarkdownPreview<CR>
 
 "Save session
 let g:my_vim_session = "~/.vim/session.vim"
