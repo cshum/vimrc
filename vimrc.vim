@@ -281,7 +281,7 @@ if has('gui_running')
 endif
 
 noremap <leader>rs :call RestoreSession()<CR>
-noremap <leader>qs :call SaveSession()<CR> :q<CR>
+noremap <leader>ss :call SaveSession()<CR>
 
 set sessionoptions-=options  " Don't save options
 set sessionoptions-=help " Don't save help
