@@ -127,7 +127,6 @@ endif
 if has('gui_gtk2')
 endif
 
-noremap <leader><leader> :cd ~/Workspace/
 noremap <leader>vs :vsplit<CR>
 noremap <leader>hs :split<CR>
 
