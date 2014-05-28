@@ -70,10 +70,10 @@ if has("win32") || has("win64")
 endif
 colorscheme koehler
 if has('gui_running')
-  Plugin 'tpope/vim-vividchalk'
 	Plugin 'skammer/vim-css-color'
 endif
 Plugin 'godlygeek/csapprox'
+Plugin 'tpope/vim-vividchalk'
 
 call vundle#end()
 
@@ -81,9 +81,7 @@ filetype on
 filetype plugin on
 filetype indent on
 syntax on
-if has('gui_running')
-  colorscheme vividchalk
-endif
+colorscheme vividchalk
 
 set number " show line numbers
 set wildmenu
