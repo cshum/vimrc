@@ -133,6 +133,8 @@ noremap <leader>hs :split<CR>
 noremap <leader>sc :split<CR>:VimShellCreate<CR>
 autocmd FileType vimshell setl nonumber
 autocmd FileType vimshell setl norelativenumber
+let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
+let g:vimshell_prompt =  '$ '
 
 "NeoComplete
 let g:acp_enableAtStartup = 0 
@@ -162,11 +164,7 @@ let g:airline_detect_whitespace=0
 "NERD Tree stuffs
 map <Leader>nt :NERDTree<CR>
 map <Leader>nf :NERDTreeFind<CR>
-let g:nerdtree_tabs_open_on_gui_startup = 0
-let g:nerdtree_tabs_synchronize_view = 0
-let g:nerdtree_tabs_synchronize_focus = 0
-let g:nerdtree_tabs_focus_on_files = 1
-let g:nerdtree_tabs_startup_cd = 0
+let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize = 25
 let NERDTreeChDirMode = 2
 
