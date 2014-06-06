@@ -53,7 +53,6 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'briancollins/vim-jst'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'lukaszkorecki/CoffeeTags'
 Plugin 'mmikitka/vim-drupal'
 Plugin 'walm/jshint.vim'
 Plugin 'godlygeek/tabular'
@@ -66,6 +65,9 @@ Plugin 'closetag.vim'
 "Plugin 'honza/vim-snippets'
 " Plugin 'scrooloose/nerdtree'
 
+if has("ruby")
+  Plugin 'lukaszkorecki/CoffeeTags'
+endif
 if has("win32") || has("win64")
 	Plugin 'xolox/vim-shell'
 endif
