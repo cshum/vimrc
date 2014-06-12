@@ -130,6 +130,7 @@ endif
 
 noremap <leader>vs :vsplit<CR>
 noremap <leader>hs :split<CR>
+nnoremap Q <nop>
 
 "VimShell
 noremap <leader>sc :split<CR>:VimShellCreate<CR>
