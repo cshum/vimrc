@@ -30,7 +30,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'bling/vim-airline'
-Plugin 'garbas/vim-snipmate'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
 Plugin 'majutsushi/tagbar'
@@ -61,9 +60,17 @@ Plugin 'sjl/gundo.vim'
 Plugin 'Townk/vim-autoclose'
 Plugin 'closetag.vim'
 "Plugin 'airblade/vim-gitgutter'
-"Plugin 'technosophos/drupal-snippets'
-"Plugin 'honza/vim-snippets'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
+" Plugin 'garbas/vim-snipmate'
+" Plugin 'honza/vim-snippets'
+" Plugin 'technosophos/drupal-snippets'
 " Plugin 'scrooloose/nerdtree'
+
+
+" Plugin 'SirVer/ultisnips'
+" Plugin 'honza/vim-snippets'
+" Plugin 'dsdeiz/vim-drupal-snippets'
 
 if has("ruby")
   Plugin 'lukaszkorecki/CoffeeTags'
@@ -143,21 +150,21 @@ let g:vimshell_prompt =  '$ '
 let g:acp_enableAtStartup = 0 
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_disable_auto_complete = 1
+" let g:neocomplcache_disable_auto_complete = 1
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
-let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+"NeoSnippet
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
-function! s:check_back_space()
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1] =~ '\s'
-endfunction
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
 
 "Airline
 let g:airline_left_sep=''
