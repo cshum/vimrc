@@ -22,13 +22,11 @@ Plugin 'xolox/vim-misc'
 Plugin 'Shougo/vimproc'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'suan/vim-instant-markdown'
-Plugin 'Shougo/neocomplcache.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'airblade/vim-rooter' 
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'Lokaltog/vim-easymotion'
 Plugin 'bling/vim-airline'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
@@ -57,11 +55,11 @@ Plugin 'walm/jshint.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'sjl/gundo.vim'
-Plugin 'Townk/vim-autoclose'
-Plugin 'closetag.vim'
-"Plugin 'airblade/vim-gitgutter'
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
+Plugin 'jiangmiao/auto-pairs'
+
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'marijnh/tern_for_vim'
+
 " Plugin 'garbas/vim-snipmate'
 " Plugin 'honza/vim-snippets'
 " Plugin 'technosophos/drupal-snippets'
@@ -69,6 +67,7 @@ Plugin 'Shougo/neosnippet-snippets'
 
 
 " Plugin 'SirVer/ultisnips'
+" Plugin 'JazzCore/neocomplcache-ultisnips'
 " Plugin 'honza/vim-snippets'
 " Plugin 'dsdeiz/vim-drupal-snippets'
 
@@ -146,26 +145,6 @@ autocmd FileType vimshell setl norelativenumber
 let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
 let g:vimshell_prompt =  '$ '
 
-"NeoComplete
-let g:acp_enableAtStartup = 0 
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-" let g:neocomplcache_disable_auto_complete = 1
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
-"NeoSnippet
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
-
 "Airline
 let g:airline_left_sep=''
 let g:airline_right_sep=''
@@ -200,9 +179,6 @@ let g:ctrlp_custom_ignore = {
   \ 'dir': '\.git$\|\.hg$\|\.svn$',
   \ 'file': '\v\.(exe|so|dll|jpg|png|gif|ai|db)$'
 \ }
-
-"Easy Motion"
-let g:EasyMotion_leader_key = '<Leader>'
 
 "Rooter
 let g:rooter_patterns = ['.git', '.svn/']
@@ -294,3 +270,4 @@ noremap <leader>ss :call SaveSession()<CR>
 
 set sessionoptions-=options  " Don't save options
 set sessionoptions-=help " Don't save help
+
