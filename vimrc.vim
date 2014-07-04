@@ -57,6 +57,8 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'jiangmiao/auto-pairs'
 
+Plugin 'Shougo/unite.vim'
+
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
 
@@ -109,10 +111,20 @@ au BufNewFile,BufRead *.tex,*.md,*.markdown setlocal spell "spellcheck
 au VimResized * :wincmd = "Resize splits when the window is resized
 
 set wildignore=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,coverage/*,public/*,tmp/*,log/*,doc/*
+  
+" Youcompleteme
+
+" Do not display Pattern not found messages during YouCompleteMe completion
+" Patch: https://groups.google.com/forum/#!topic/vim_dev/WeBBjkXE8H8
+try
+  set shortmess+=c
+catch /E539: Illegal character/
+endtry
 
 " Make searches case-sensitive only if they contain upper-case characters
 set ignorecase
 set smartcase
+set pumheight=15
 
 let mapleader=" "
 
