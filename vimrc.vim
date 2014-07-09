@@ -56,8 +56,10 @@ Plugin 'godlygeek/tabular'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'jiangmiao/auto-pairs'
+" Plugin 'Raimondi/delimitMate'
 
 Plugin 'Shougo/unite.vim'
+Plugin 'tokuhirom/unite-git'
 
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
@@ -111,15 +113,6 @@ au BufNewFile,BufRead *.tex,*.md,*.markdown setlocal spell "spellcheck
 au VimResized * :wincmd = "Resize splits when the window is resized
 
 set wildignore=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,coverage/*,public/*,tmp/*,log/*,doc/*
-  
-" Youcompleteme
-
-" Do not display Pattern not found messages during YouCompleteMe completion
-" Patch: https://groups.google.com/forum/#!topic/vim_dev/WeBBjkXE8H8
-try
-  set shortmess+=c
-catch /E539: Illegal character/
-endtry
 
 " Make searches case-sensitive only if they contain upper-case characters
 set ignorecase
@@ -150,6 +143,12 @@ noremap <leader>vs :vsplit<CR>
 noremap <leader>hs :split<CR>
 nnoremap Q <nop>
 
+"Unite.vim
+" noremap <leader><leader> :Unite<CR>
+  
+" Youcompleteme
+
+
 "VimShell
 noremap <leader>sc :split<CR>:VimShellCreate<CR>
 autocmd FileType vimshell setl nonumber
@@ -177,7 +176,6 @@ let g:tagbar_width = 30
 set ofu=syntaxcomplete#Complete
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
