@@ -55,8 +55,7 @@ Plugin 'walm/jshint.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'sjl/gundo.vim'
-Plugin 'jiangmiao/auto-pairs'
-" Plugin 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate'
 
 Plugin 'Shougo/unite.vim'
 Plugin 'tokuhirom/unite-git'
@@ -148,6 +147,8 @@ nnoremap Q <nop>
   
 " Youcompleteme
 
+" delimitMate
+let delimitMate_expand_cr = 1
 
 "VimShell
 noremap <leader>sc :split<CR>:VimShellCreate<CR>
