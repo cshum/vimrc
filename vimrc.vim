@@ -55,6 +55,7 @@ Plugin 'walm/jshint.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'sjl/gundo.vim'
+Plugin 'justinmk/vim-gtfo'
 Plugin 'Raimondi/delimitMate'
 
 Plugin 'Shougo/unite.vim'
