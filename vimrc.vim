@@ -243,11 +243,6 @@ noremap <leader>gd :GundoToggle<CR>
 " JSHint
 noremap <leader>jh :JSHint<CR>
 
-"Instant Markdown
-let g:instant_markdown_autostart = 0
-let g:instant_markdown_slow = 1
-noremap <leader>md :InstantMarkdownPreview<CR>
-
 "Save session
 let g:my_vim_session = "~/.vim/session.vim"
 
