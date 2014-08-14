@@ -21,7 +21,6 @@ Plugin 'L9'
 Plugin 'xolox/vim-misc'
 Plugin 'Shougo/vimproc'
 Plugin 'Shougo/vimshell.vim'
-Plugin 'suan/vim-instant-markdown'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'airblade/vim-rooter' 
 Plugin 'christoomey/vim-tmux-navigator'
@@ -58,9 +57,6 @@ Plugin 'sjl/gundo.vim'
 Plugin 'justinmk/vim-gtfo'
 Plugin 'Raimondi/delimitMate'
 
-Plugin 'Shougo/unite.vim'
-Plugin 'tokuhirom/unite-git'
-
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
 
@@ -68,7 +64,6 @@ Plugin 'marijnh/tern_for_vim'
 " Plugin 'honza/vim-snippets'
 " Plugin 'technosophos/drupal-snippets'
 " Plugin 'scrooloose/nerdtree'
-
 
 " Plugin 'SirVer/ultisnips'
 " Plugin 'JazzCore/neocomplcache-ultisnips'
