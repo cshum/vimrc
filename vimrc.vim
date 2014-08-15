@@ -63,16 +63,8 @@ Plugin 'marijnh/tern_for_vim'
 " Plugin 'garbas/vim-snipmate'
 " Plugin 'honza/vim-snippets'
 " Plugin 'technosophos/drupal-snippets'
-" Plugin 'scrooloose/nerdtree'
-
-" Plugin 'SirVer/ultisnips'
-" Plugin 'JazzCore/neocomplcache-ultisnips'
-" Plugin 'honza/vim-snippets'
 " Plugin 'dsdeiz/vim-drupal-snippets'
 
-if has("ruby")
-  Plugin 'lukaszkorecki/CoffeeTags'
-endif
 if has("win32") || has("win64")
 	Plugin 'xolox/vim-shell'
 endif
@@ -138,9 +130,6 @@ noremap <leader>vs :vsplit<CR>
 noremap <leader>hs :split<CR>
 nnoremap Q <nop>
 
-"Unite.vim
-" noremap <leader><leader> :Unite<CR>
-  
 " Youcompleteme
 
 " delimitMate
