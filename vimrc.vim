@@ -56,9 +56,11 @@ Plugin 'godlygeek/tabular'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'justinmk/vim-gtfo'
-Plugin 'Raimondi/delimitMate'
+if has("unix")
+  Plugin 'Raimondi/delimitMate'
+  Plugin 'Valloric/YouCompleteMe'
+endif
 
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
 
 " Plugin 'garbas/vim-snipmate'
