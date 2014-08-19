@@ -98,7 +98,6 @@ set autoread " auto reload files
 set incsearch " highlight when typing search
 set hlsearch " highlight search
 set nohidden "clear buffer when close
-set directory=~/.vim "swp dir
 au BufNewFile,BufRead *.tex,*.md,*.markdown setlocal spell "spellcheck
 au VimResized * :wincmd = "Resize splits when the window is resized
 
