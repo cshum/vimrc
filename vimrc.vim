@@ -155,6 +155,7 @@ map <Leader>nf :NERDTreeFind<CR>
 let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize = 25
 let NERDTreeChDirMode = 2
+let NERDTreeIgnore = ['\.swp$','\~$','\.DS_Store$']
 
 "TagBar
 map <leader>tb :TagbarToggle<cr>
