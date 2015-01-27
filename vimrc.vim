@@ -132,6 +132,9 @@ noremap <leader>vs :vsplit<CR>
 noremap <leader>hs :split<CR>
 nnoremap Q <nop>
 
+"CoffeeScript
+noremap <leader>o :!open %<CR>
+
 " Youcompleteme
 
 " delimitMate
