@@ -1,0 +1,14 @@
+node_modules
+.DS_Store
+*.swp
+public/components
+npm-debug.log
+test/data
+test/world.png
+test/disk.dmg
+test/disk2.dmg
+test/small2.jpg
+test/rp2.png
+test/www.png
+resources
+data

@@ -133,7 +133,7 @@ noremap <leader>hs :split<CR>
 nnoremap Q <nop>
 
 "CoffeeScript
-noremap <leader>o :!open %<CR>
+noremap <leader>o :!open %<CR><CR>
 
 " Youcompleteme
 
