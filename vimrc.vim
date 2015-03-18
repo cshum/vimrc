@@ -150,7 +150,7 @@ let g:vimshell_prompt =  '$ '
 "Airline
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-let g:airline_detect_whitespace=0
+" let g:airline_detect_whitespace=0
 
 "NERD Tree stuffs
 map <Leader>nt :NERDTree<CR>
