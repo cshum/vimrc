@@ -119,7 +119,7 @@ endif
 if has('gui_macvim')
 	set guioptions-=m  "remove menubar
 	set sh=/bin/sh 
-	set guifont=Menlo:h14
+	set guifont=Monaco:h13
 endif
 if has("gui_win32") || has("gui_win64")
 	set guifont=Consolas:h11
