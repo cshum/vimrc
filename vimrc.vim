@@ -27,7 +27,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
-Plugin 'bkad/CamelCaseMotion'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
 Plugin 'majutsushi/tagbar'
 Plugin 'Xuyuanp/git-nerdtree'
@@ -185,14 +184,6 @@ let g:ctrlp_custom_ignore = {
 "Rooter
 let g:rooter_patterns = ['.git', '.svn/']
 let g:rooter_use_lcd = 1
-
-"CamelCaseMotion
-map <silent> w <Plug>CamelCaseMotion_w
-map <silent> b <Plug>CamelCaseMotion_b
-map <silent> e <Plug>CamelCaseMotion_e
-sunmap w
-sunmap b
-sunmap e
 
 "Emmet
 " let g:user_emmet_expandabbr_key = '<tab>'
