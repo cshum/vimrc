@@ -52,6 +52,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'mmikitka/vim-drupal'
 Plugin 'walm/jshint.vim'
 Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'justinmk/vim-gtfo'
@@ -222,6 +223,12 @@ nmap <Leader>a: :Tabularize /:\zs/l0r1<CR>
 vmap <Leader>a: :Tabularize /:\zs/l0r1<CR>
 nmap <Leader>a, :Tabularize /,\zs/l1r0<CR>
 vmap <Leader>a, :Tabularize /,\zs/l1r0<CR>
+
+" Vim Markdown
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_math=1
+let g:vim_markdown_frontmatter=1
+noremap <leader>toc :Toc<CR>
 
 " Gundo Vim
 noremap <leader>gd :GundoToggle<CR>
