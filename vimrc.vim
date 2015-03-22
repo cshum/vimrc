@@ -43,7 +43,7 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'groenewege/vim-less'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-Plugin 'tpope/vim-markdown'
+" Plugin 'tpope/vim-markdown'
 Plugin 'tangledhelix/vim-octopress'
 Plugin 'tomtom/tlib_vim'
 Plugin 'briancollins/vim-jst'
@@ -99,6 +99,7 @@ set incsearch " highlight when typing search
 set hlsearch " highlight search
 set nohidden "clear buffer when close
 au BufNewFile,BufRead *.tex,*.md,*.markdown setlocal spell "spellcheck
+au BufNewFile,BufRead *.tex,*.md,*.markdown setlocal linebreak "soft wrap
 au VimResized * :wincmd = "Resize splits when the window is resized
 
 set wildignore=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,coverage/*,public/*,tmp/*,log/*,doc/*
