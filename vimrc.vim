@@ -237,6 +237,16 @@ noremap <leader>gd :GundoToggle<CR>
 " JSHint
 noremap <leader>jh :JSHint<CR>
 
+" Quit Prompt
+nnoremap ZZ :call QuitPrompt()<cr>
+
+fun! QuitPrompt()
+  if has("gui_running") && tabpagenr("$") == 1 && winnr("$") == 1
+     let choice = confirm("Close?", "&yes\n&no", 1)
+     if choice == 1 | wq | endif
+  else | wq | endif
+endfun
+
 "Save session
 let g:my_vim_session = "~/.vim/session.vim"
 
