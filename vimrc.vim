@@ -56,12 +56,12 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'justinmk/vim-gtfo'
-if has("unix")
-  Plugin 'Raimondi/delimitMate'
-  Plugin 'Valloric/YouCompleteMe'
-endif
+Plugin 'Raimondi/delimitMate'
 
-Plugin 'marijnh/tern_for_vim'
+if has("unix") && has('gui_running')
+  Plugin 'Valloric/YouCompleteMe'
+  Plugin 'marijnh/tern_for_vim'
+endif
 
 " Plugin 'garbas/vim-snipmate'
 " Plugin 'honza/vim-snippets'
@@ -267,10 +267,10 @@ fu! RestoreSession()
   endif
 endfunction
 
-if has('gui_running')
+" if has('gui_running')
   " autocmd VimLeave * call SaveSession()
   " autocmd VimEnter * nested call RestoreSession()
-endif
+" endif
 
 noremap <leader>rs :call RestoreSession()<CR>
 noremap <leader>ss :call SaveSession()<CR>
