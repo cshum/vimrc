@@ -108,6 +108,7 @@ set wildignore=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,coverage/*,public
 set ignorecase
 set smartcase
 set pumheight=15
+set completeopt-=preview "disable completion scratch preview
 
 let mapleader=" "
 
