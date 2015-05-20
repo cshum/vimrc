@@ -19,8 +19,6 @@ endif
 Plugin 'gmarik/vundle' 
 Plugin 'L9'
 Plugin 'xolox/vim-misc'
-Plugin 'Shougo/vimproc'
-Plugin 'Shougo/vimshell.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'airblade/vim-rooter' 
 Plugin 'christoomey/vim-tmux-navigator'
@@ -43,7 +41,6 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'groenewege/vim-less'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-" Plugin 'tpope/vim-markdown'
 Plugin 'tangledhelix/vim-octopress'
 Plugin 'tomtom/tlib_vim'
 Plugin 'briancollins/vim-jst'
@@ -54,19 +51,12 @@ Plugin 'walm/jshint.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'sjl/gundo.vim'
-Plugin 'justinmk/vim-gtfo'
 Plugin 'Raimondi/delimitMate'
 
 if has("unix") && has('gui_running')
   Plugin 'Valloric/YouCompleteMe'
   Plugin 'marijnh/tern_for_vim'
 endif
-
-" Plugin 'garbas/vim-snipmate'
-" Plugin 'honza/vim-snippets'
-" Plugin 'technosophos/drupal-snippets'
-" Plugin 'dsdeiz/vim-drupal-snippets'
 
 if has("win32") || has("win64")
 	Plugin 'xolox/vim-shell'
@@ -141,13 +131,6 @@ noremap <leader>o :!open %<CR><CR>
 
 " delimitMate
 let delimitMate_expand_cr = 1
-
-"VimShell
-noremap <leader>sc :split<CR>:VimShellCreate<CR>
-autocmd FileType vimshell setl nonumber
-autocmd FileType vimshell setl norelativenumber
-let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
-let g:vimshell_prompt =  '$ '
 
 "Airline
 let g:airline_left_sep=''
@@ -275,6 +258,8 @@ endfunction
 noremap <leader>rs :call RestoreSession()<CR>
 noremap <leader>ss :call SaveSession()<CR>
 
-set sessionoptions-=options  " Don't save options
-set sessionoptions-=help " Don't save help
+"Don't save options
+set sessionoptions-=options
+"Don't save help
+set sessionoptions-=help
 
