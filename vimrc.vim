@@ -74,7 +74,11 @@ filetype on
 filetype plugin on
 filetype indent on
 syntax on
-colorscheme vividchalk
+try
+  colorscheme vividchalk
+catch
+  colorscheme torte
+endtry
 
 set number " show line numbers
 set wildmenu
