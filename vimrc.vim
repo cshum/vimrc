@@ -222,6 +222,9 @@ noremap <leader>toc :Toc<CR>
 " Gundo Vim
 noremap <leader>gd :GundoToggle<CR>
 
+" Syntastic
+let g:syntastic_javascript_checkers = ['standard']
+
 " JSHint
 noremap <leader>jh :JSHint<CR>
 
