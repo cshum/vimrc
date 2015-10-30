@@ -225,7 +225,8 @@ noremap <leader>gd :GundoToggle<CR>
 
 " Syntastic
 let g:syntastic_javascript_checkers = ['standard']
-let g:syntastic_check_on_wq = 1 " check on save
+autocmd VimEnter * SyntasticToggleMode " disable auto check
+noremap <leader>sc :SyntasticCheck<CR>
 
 " JSHint
 noremap <leader>jh :JSHint<CR>
