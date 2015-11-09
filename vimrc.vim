@@ -52,7 +52,7 @@ Plugin 'walm/jshint.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'Raimondi/delimitMate'
+" Plugin 'Raimondi/delimitMate'
 
 if has("unix") && has('gui_running')
   Plugin 'Valloric/YouCompleteMe'
@@ -225,7 +225,7 @@ noremap <leader>gd :GundoToggle<CR>
 
 " Syntastic
 let g:syntastic_javascript_checkers = ['standard']
-autocmd VimEnter * SyntasticToggleMode " disable auto check
+let b:syntastic_mode = "passive"
 noremap <leader>sc :SyntasticCheck<CR>
 
 " JSHint
