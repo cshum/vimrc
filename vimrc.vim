@@ -192,12 +192,13 @@ nnoremap <leader><down> :cnext<cr>
 nnoremap <leader><up> :cprev<cr>
 nnoremap <leader><left> :cfirst<cr>
 nnoremap <leader><right> :clast<cr>
+nnoremap <leader>tc :tabclose<cr>
 
 "Fugitive
 autocmd User Fugitive noremap <buffer> <leader>gs :Gstatus<cr>
 autocmd User Fugitive noremap <buffer> <leader>gg :silent! Ggrep ''<left>
 autocmd User Fugitive noremap <buffer> <leader>gw :Gwrite<cr>
-autocmd User Fugitive noremap <buffer> <leader>gc :Gcommit<cr>
+autocmd User Fugitive noremap <buffer> <leader>gc :Gcommit<cr>i
 autocmd User Fugitive noremap <buffer> <leader>gd :Gdiff<cr>
 autocmd User Fugitive noremap <buffer> <leader>gl :silent Glog<cr>
 autocmd User Fugitive noremap <buffer> <leader>gpl :Git pull 
