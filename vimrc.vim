@@ -195,14 +195,16 @@ nnoremap <leader><right> :clast<cr>
 
 "Fugitive
 autocmd User Fugitive noremap <buffer> <leader>gs :Gstatus<cr>
-autocmd User Fugitive noremap <buffer> <leader>gg :Ggrep ""<left>
+autocmd User Fugitive noremap <buffer> <leader>gg :silent! Ggrep ''<left>
 autocmd User Fugitive noremap <buffer> <leader>gw :Gwrite<cr>
 autocmd User Fugitive noremap <buffer> <leader>gc :Gcommit<cr>
-autocmd User Fugitive noremap <buffer> <leader>gd :Gdiff 
-autocmd User Fugitive noremap <buffer> <leader>gl :Glog<cr>
-autocmd User Fugitive noremap <buffer> <leader>gal :Glog --<cr>
+autocmd User Fugitive noremap <buffer> <leader>gd :Gdiff<cr>
+autocmd User Fugitive noremap <buffer> <leader>gl :silent Glog<cr>
 autocmd User Fugitive noremap <buffer> <leader>gpl :Git pull 
 autocmd User Fugitive noremap <buffer> <leader>gph :Git push 
+
+autocmd QuickFixCmdPost *grep* cwindow " opens quickfix after :Ggrep 
+
 
 autocmd VimEnter .git/PULLREQ_EDIT_MSG setl wrap textwidth=0
 
