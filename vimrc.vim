@@ -192,6 +192,9 @@ nnoremap <leader><down> :cnext<cr>
 nnoremap <leader><up> :cprev<cr>
 nnoremap <leader><left> :cfirst<cr>
 nnoremap <leader><right> :clast<cr>
+
+" Tab
+nnoremap <leader>tn :tabnew<cr>
 nnoremap <leader>tc :tabclose<cr>
 
 "Fugitive
