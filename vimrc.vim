@@ -53,6 +53,7 @@ Plugin 'walm/jshint.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'Raimondi/delimitMate'
 
 if has("unix") && has('gui_running')
   Plugin 'Valloric/YouCompleteMe'
@@ -129,6 +130,9 @@ noremap <leader>vs :vsplit<CR>
 noremap <leader>hs :split<CR>
 nnoremap Q <nop>
 noremap <leader>o :!open %<CR><CR>
+
+" delimitMate
+let delimitMate_expand_cr = 1
 
 "Airline
 let g:airline_left_sep=''
@@ -224,7 +228,7 @@ noremap <leader>gd :GundoToggle<CR>
 
 " Syntastic
 let g:syntastic_javascript_checkers = ['standard']
-let b:syntastic_mode = "passive"
+let g:syntastic_mode = "passive"
 noremap <leader>sc :SyntasticCheck<CR>
 
 " JSHint
