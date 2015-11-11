@@ -53,7 +53,7 @@ Plugin 'walm/jshint.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tomtom/tcomment_vim'
-" Plugin 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate'
 
 if has("unix") && has('gui_running')
   Plugin 'Valloric/YouCompleteMe'
@@ -191,6 +191,8 @@ nnoremap <leader><left> :cfirst<cr>
 nnoremap <leader><right> :clast<cr>
 
 " Tab
+nnoremap <leader>nt :tabnew<cr>
+nnoremap <leader>ct :tabclose<cr>
 nnoremap <leader>tn :tabnew<cr>
 nnoremap <leader>tc :tabclose<cr>
 
