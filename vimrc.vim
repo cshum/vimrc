@@ -53,7 +53,7 @@ Plugin 'walm/jshint.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'Raimondi/delimitMate'
+" Plugin 'Raimondi/delimitMate'
 
 if has("unix") && has('gui_running')
   Plugin 'Valloric/YouCompleteMe'
@@ -132,7 +132,7 @@ nnoremap Q <nop>
 noremap <leader>o :!open %<CR><CR>
 
 " delimitMate
-let g:delimitMate_expand_cr = 1
+" let delimitMate_expand_cr = 1
 
 "Airline
 let g:airline_left_sep=''
