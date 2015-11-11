@@ -53,7 +53,6 @@ Plugin 'walm/jshint.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tomtom/tcomment_vim'
-" Plugin 'Raimondi/delimitMate'
 
 if has("unix") && has('gui_running')
   Plugin 'Valloric/YouCompleteMe'
@@ -129,27 +128,20 @@ endif
 noremap <leader>vs :vsplit<CR>
 noremap <leader>hs :split<CR>
 nnoremap Q <nop>
-
-"CoffeeScript
 noremap <leader>o :!open %<CR><CR>
-
-" Youcompleteme
-
-" delimitMate
-let delimitMate_expand_cr = 1
 
 "Airline
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 " let g:airline_detect_whitespace=0
 
-"NERD Tree stuffs
+"NERD Tree
 map <Leader>nt :NERDTree<CR>
 map <Leader>nf :NERDTreeFind<CR>
 let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize = 25
 let NERDTreeChDirMode = 2
-let NERDTreeIgnore = ['\.swp$','\~$','\.DS_Store$']
+let NERDTreeIgnore = ['\.git','\.swp$','\~$','\.DS_Store$']
 
 "TagBar
 map <leader>tb :TagbarToggle<cr>
