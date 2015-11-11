@@ -132,7 +132,7 @@ nnoremap Q <nop>
 noremap <leader>o :!open %<CR><CR>
 
 " delimitMate
-let delimitMate_expand_cr = 1
+let g:delimitMate_expand_cr = 1
 
 "Airline
 let g:airline_left_sep=''
