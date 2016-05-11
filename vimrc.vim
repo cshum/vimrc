@@ -54,6 +54,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'Raimondi/delimitMate'
+Plugin 'heavenshell/vim-jsdoc'
 
 if has("unix") && has('gui_running')
   Plugin 'Valloric/YouCompleteMe'
