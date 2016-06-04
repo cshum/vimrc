@@ -198,6 +198,9 @@ nnoremap <leader>ct :tabclose<cr>
 nnoremap <leader>tn :tabnew<cr>
 nnoremap <leader>tc :tabclose<cr>
 
+" JsDoc
+nnoremap <leader>jd :JsDoc<cr>
+
 "Fugitive
 autocmd User Fugitive noremap <buffer> <leader>gs :Gstatus<cr>
 autocmd User Fugitive noremap <buffer> <leader>gg :silent! Ggrep ''<left>
