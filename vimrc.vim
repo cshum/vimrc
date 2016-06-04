@@ -200,6 +200,9 @@ nnoremap <leader>tc :tabclose<cr>
 
 " JsDoc
 nnoremap <leader>jd :JsDoc<cr>
+let g:jsdoc_allow_input_prompt=1
+let g:jsdoc_return_description=0
+let g:jsdoc_param_description_separator=' - '
 
 "Fugitive
 autocmd User Fugitive noremap <buffer> <leader>gs :Gstatus<cr>
