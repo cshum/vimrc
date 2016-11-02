@@ -186,6 +186,9 @@ autocmd FileType coffee nnoremap <buffer> <leader>cl :CoffeeLint<cr>
 autocmd FileType coffee nnoremap <buffer> <leader>cm :CoffeeMake<cr>
 autocmd FileType coffee nnoremap <buffer> <leader>cM :CoffeeMake
 
+"JSX
+let g:jsx_ext_required = 0
+
 " Quickfix
 nnoremap <leader><down> :cnext<cr>
 nnoremap <leader><up> :cprev<cr>
