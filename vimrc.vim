@@ -138,7 +138,6 @@ noremap <leader>o :!open %<CR><CR>
 "Airline
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-let g:airline_section_b=''
 " let g:airline_detect_whitespace=0
 
 "NERD Tree
