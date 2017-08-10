@@ -42,12 +42,9 @@ Plugin 'groenewege/vim-less'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'elzr/vim-json'
-Plugin 'tangledhelix/vim-octopress'
 Plugin 'tomtom/tlib_vim'
 Plugin 'briancollins/vim-jst'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'mtscout6/vim-cjsx'
 Plugin 'mmikitka/vim-drupal'
 Plugin 'walm/jshint.vim'
 Plugin 'godlygeek/tabular'
@@ -57,8 +54,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'heavenshell/vim-jsdoc'
 
 if has("unix") && has('gui_running')
-  Plugin 'Valloric/YouCompleteMe'
-  Plugin 'marijnh/tern_for_vim'
+  " Plugin 'Valloric/YouCompleteMe'
+  " Plugin 'marijnh/tern_for_vim'
 endif
 
 if has("win32") || has("win64")
