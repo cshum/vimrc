@@ -168,7 +168,7 @@ let g:ctrlp_custom_ignore = {
 
 "Rooter
 let g:rooter_patterns = ['.git', '.svn/']
-let g:rooter_use_lcd = 1
+let g:rooter_cd_cmd="lcd"
 
 "Emmet
 " let g:user_emmet_expandabbr_key = '<tab>'
